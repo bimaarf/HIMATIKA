@@ -14,19 +14,20 @@
             <ul>
           @foreach($product as $pd)
           @if ($pd->user_id ==  Auth::user()->id)
+           
             <li class="card bd-1" style="padding-top:10px; margin:10px">
               {{-- window --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-window pos-absolute t-5 r-60 tx-20-force " data-toggle="tooltip" title="Edit!"></i></a>
 
-              <a href="#modaldeleted" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
+              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
 
               {{-- mobile --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-mobile pos-absolute t-5 r-40 " data-toggle="tooltip" title="Edit!"></i></a>
               
-              <a href="#modaldeleted" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
+              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
 
             <!-- modal -->
-            <div id="modaldeleted" class="modal fade">
+            <div id="modaldeleted{{ $pd->id }}" class="modal fade">
               <div class="modal-dialog modal-dialog-vertical-center" role="document">
                 <div class="modal-content bd-0 tx-14 rounded">
                   <div class="modal-header pd-y-20 pd-x-25">
@@ -40,12 +41,13 @@
                     <p class="mg-b-5">Are you sure you want to delete this item? <u>Confirm and delete!</u> </p>
                   </div>
                   <div class="modal-footer rounded">
-                    <a href="{{ route('fe-product.hapus', ['id'=>$pd->id]) }}" id="btn-delete" class="btn btn-danger rounded"> Confirm </a>	        
+                    <a href="{{ route('fe-product.hapus', ['slug'=>$pd->slug]) }}" id="btn-delete" class="btn btn-danger rounded"> Confirm </a>	        
                     <a href="#" class="btn btn-secondary rounded" data-dismiss="modal"> No </a>	        
                   </div>
                 </div>
               </div><!-- modal-dialog -->
             </div><!-- modal -->
+            
               
             <a href="#"><img class="t-window" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
             <a href="#"><img class="t-mobile" style="height: 100px" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
@@ -64,6 +66,7 @@
           </li>
           @endif
           @endforeach
+          
           </ul>
         </div>
       </div><!-- card -->

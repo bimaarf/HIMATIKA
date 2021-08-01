@@ -34,9 +34,13 @@ class ProductController extends Controller
         $product->harga_akhir = $request->harga_akhir;
         $product->cover_img = $filename;
         $product->user_id = Auth::id();
-        $product->save();
+        if($product->save())
+        {
+            return redirect()->route('fe-index.index');
+        }else{
+            return redirect()->route('fe-index.form_tambah_product');
+        }
 
-        return redirect()->route('fe-index.index');
     }
     public function formUbah($slug)
     {
@@ -79,9 +83,9 @@ class ProductController extends Controller
 
         
     }
-    public function hapus($id)
+    public function hapus($slug)
     {
-        $product = Product::find($id);
+        $product = Product::where('slug', $slug)->first();
         $product->delete();
         return redirect()->route('fe-index.index');
     }

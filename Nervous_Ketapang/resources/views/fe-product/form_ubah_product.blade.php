@@ -25,12 +25,12 @@
 			<input class="form-control" type="number" name="stok" value="{{ $product->stok }}">
 		</div>		
 		<div class="form-group">
-			<label>Starting Price</label>
-			<input class="form-control" type="number" name="harga_awal" value="{{ $product->harga_awal }}">
+			<label>Previous Price</label>
+			<input class="form-control" type="num" name="harga_awal" value="{{ $product->harga_akhir }}"readonly />
 		</div>	
 		<div class="form-group">
 			<label>Final Price</label>
-			<input class="form-control" type="number" name="harga_akhir" value="{{ $product->harga_akhir }}">
+			<input class="form-control" type="num" name="harga_akhir" id="num">
 		</div>	
 		<div class="form-group">
 			<label>Image</label>
