@@ -43,7 +43,7 @@
                     <p class="mg-b-5">Are you sure you want to delete this item? <u>Confirm and delete!</u> </p>
                   </div>
                   <div class="modal-footer rounded">
-                    <a href="{{ route('fe-product.hapus', ['slug'=>$pd->slug]) }}" id="btn-delete" class="btn btn-danger rounded"> Confirm </a>	        
+                    <a href="{{ route('fe-product.hapus', ['id'=>$pd->id]) }}" id="btn-delete" class="btn btn-danger rounded"> Confirm </a>	        
                     <a href="#" class="btn btn-secondary rounded" data-dismiss="modal"> No </a>	        
                   </div>
                 </div>

@@ -31,4 +31,4 @@ Route::get('/tambah-produk', [ProductController::class, 'formTambah'])->name('fe
 Route::post('/produk-tambah', [ProductController::class, 'tambah'])->name('fe-product.tambah')->middleware('auth');
 route::get('/{slug}', [ProductController::class, 'formUbah'])->name('fe-product.form_ubah_product')->middleware('auth');
 Route::post('/produk-edit/{slug}', [ProductController::class, 'ubah'])->name('fe-product.ubah')->middleware('auth');
-Route::get('/delete/product/{slug}', [ProductController::class, 'hapus'])->name('fe-product.hapus')->middleware('auth');
+Route::get('/delete/product/{id}', [ProductController::class, 'hapus'])->name('fe-product.hapus')->middleware('auth');

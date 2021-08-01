@@ -83,9 +83,9 @@ class ProductController extends Controller
 
         
     }
-    public function hapus($slug)
+    public function hapus($id)
     {
-        $product = Product::where('slug', $slug)->first();
+        $product = Product::find($id);
         $product->delete();
         return redirect()->route('fe-index.index');
     }
