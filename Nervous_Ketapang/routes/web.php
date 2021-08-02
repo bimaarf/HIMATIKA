@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
+use App\Models\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +29,14 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 // frontend
 Route::get('/', [SiteController::class, 'index'])->name('fe-index.index');
+Route::get('/order', [OrderController::class, 'formTambah'])->name('fe-order.form_tambah_order');
+
+
+// form product
 Route::get('/tambah-produk', [ProductController::class, 'formTambah'])->name('fe-product.form_tambah_product')->middleware('auth');
 Route::post('/produk-tambah', [ProductController::class, 'tambah'])->name('fe-product.tambah')->middleware('auth');
-route::get('/{slug}', [ProductController::class, 'formUbah'])->name('fe-product.form_ubah_product')->middleware('auth');
+Route::get('/{slug}', [ProductController::class, 'formUbah'])->name('fe-product.form_ubah_product')->middleware('auth');
 Route::post('/produk-edit/{slug}', [ProductController::class, 'ubah'])->name('fe-product.ubah')->middleware('auth');
 Route::get('/delete/product/{id}', [ProductController::class, 'hapus'])->name('fe-product.hapus')->middleware('auth');
+
+// form order

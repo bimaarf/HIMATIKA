@@ -1,14 +1,14 @@
 @extends('layouts.frontend.main_produk')
 @section('content')
 
-@if ($product->user_id ==  Auth::user()->id)
-	<div class="slim-pageheader">
+<div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Product</li>
-  	</ol>
-  <h6 class="slim-pagetitle">Product</h6>
-  </div>
+	</ol>
+	<h6 class="slim-pagetitle">Product</h6>
+</div>
+@if ($product->user_id ==  Auth::user()->id)
 		<form method="POST" action="{{ route('fe-product.ubah', ['slug'=>$product->slug]) }}" enctype="multipart/form-data">
 			@csrf
 		<div class="form-group">

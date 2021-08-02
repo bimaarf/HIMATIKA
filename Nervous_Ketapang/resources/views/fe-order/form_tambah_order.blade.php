@@ -1,12 +1,12 @@
-@extends('layouts.frontend.main_produk')
+@extends('layouts.frontend.main_order')
 @section('content')
 	
 	<div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Product</li>
+		<li class="breadcrumb-item active" aria-current="page">Order</li>
   	</ol>
-  <h6 class="slim-pagetitle">Add</h6>
+  <h6 class="slim-pagetitle">Order</h6>
   </div>
 		<form method="POST" action="{{ route('fe-product.tambah') }}" enctype="multipart/form-data">
 			@csrf

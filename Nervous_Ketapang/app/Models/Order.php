@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use App\Models\User;
-use App\Models\Order;
+use App\Models\Product;
 
-class Product extends Model
+class Order extends Model
 {
     use HasFactory;
-    protected $table = 'product';
+    protected $table = 'order';
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])
@@ -21,8 +21,8 @@ class Product extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function order()
+    public function product()
     {
-        return $this->belongsTo(Order::class);
+        return $this->hasMany(Product::class);
     }
 }
