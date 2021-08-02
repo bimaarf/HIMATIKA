@@ -19,19 +19,19 @@
               {{-- window --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-window pos-absolute t-5 r-60 tx-20-force " data-toggle="tooltip" title="Edit!"></i></a>
 
-              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
+              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Delete!"></i></a>
 
               {{-- mobile --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-mobile pos-absolute t-5 r-40 " data-toggle="tooltip" title="Edit!"></i></a>
               
-              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Hapus!"></i></a>
+              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Delete!"></i></a>
 
             <!-- modal -->
             <div id="modaldeleted{{ $pd->id }}" class="modal fade">
               <div class="modal-dialog modal-dialog-vertical-center" role="document">
                 <div class="modal-content bd-0 tx-14 rounded">
                   <div class="modal-header pd-y-20 pd-x-25">
-                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Delete</h6>
+                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"><i class="fa fa-trash tx-18-force"> </i> Delete item</h6>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -51,8 +51,7 @@
             </div><!-- modal -->
             
               
-            <a href="#"><img class="t-window" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
-            <a href="#"><img class="t-mobile" style="height: 100px" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
+            <a href="#"><img src="{{ asset('produk/'. $pd->cover_img )}}"></a>
           
           <div class="space"></div>
           

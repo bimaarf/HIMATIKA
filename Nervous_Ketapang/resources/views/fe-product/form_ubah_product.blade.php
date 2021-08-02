@@ -30,7 +30,7 @@
 		</div>	
 		<div class="form-group">
 			<label>Final Price</label>
-			<input class="form-control" type="num" name="harga_akhir" id="num">
+			<input class="form-control" type="num" name="harga_akhir" id="num" required>
 		</div>	
 		<div class="form-group">
 			<label>Image</label>
@@ -38,7 +38,7 @@
 		</div>		
 			
 		<hr>
-		<input class="btn btn-outline-info pd-10-force col-md-2 " type="submit" onclick="showValue()">
+		<input class="btn btn-outline-info pd-10-force col-md-2 " value="Update" type="submit" onclick="showValue()">
 		&emsp;
 		<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Batal"></a>
 		</form>

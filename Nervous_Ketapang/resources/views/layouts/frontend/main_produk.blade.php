@@ -12,7 +12,8 @@
     <!-- Slim CSS -->
     <link rel="stylesheet" href="{{asset('frontend/assets/bootstrap_slim/css/slim.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/bootstrap_slim/css/slim.one.css')}}">
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="{{asset('frontend/assets/bootstrap_slim/css/scrollbar.css')}}">
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 		<script>
 		    $(document).ready(function(){
 		    	setInterval(function(){
@@ -30,9 +31,9 @@
 
 
   </head>
-  <body class="slim-sticky-header">
+  <body class="slim-sticky-header scrollbar scrollbar-near-moon thin">
 	  @include('layouts.frontend.partial.header_p')
-    <div class="container">
+    <div class="container force-overfow force-overflow">
         @yield('content')
     </div>
     

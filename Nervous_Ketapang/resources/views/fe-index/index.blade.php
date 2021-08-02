@@ -1,7 +1,7 @@
 @extends('layouts.frontend.main')
 @section('content')
 <!-- Home -->
-    <div class="tab-content">
+    <div class="tab-content force-overfow force-overflow">
         <div class="tab-pane active" id="home">
 
             @include('fe-index.partial.home')
