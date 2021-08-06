@@ -5,8 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Coretan Mahasiswa | Dashboard</title>
+  <title>Himatika Untan | Dashboard</title>
   <link rel="icon" href="" type="image/x-icon">
+  <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}" sizes="32x32" />
+  <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}" sizes="192x192" />
+  <link rel="apple-touch-icon-precomposed" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}">
+  <meta name="msapplication-TileImage" content="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->

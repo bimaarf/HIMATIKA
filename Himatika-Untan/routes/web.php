@@ -53,6 +53,9 @@ Route::get('/dashboard/kategori/hapus/{id}', [AdminKategoriController::class, 'h
 
 // frontend
 Route::get('/', [BeritaController::class, 'index'])->name('fe-berita.index');
+Route::get('/Tentang', [BeritaController::class, 'tentang'])->name('fe-berita.tentang');
+Route::get('/Profil-kami', [BeritaController::class, 'profilKami'])->name('fe-berita.profil-kami');
+Route::get('/Views{key}', [BeritaController::class, 'detail'])->name('fe-berita.views');
 
 // Struktur
 Route::get('/dashboard/struktur', [AdminStrukturController::class, 'index'])->name('admin.struktur.dashboard')->middleware('auth');

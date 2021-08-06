@@ -27,25 +27,25 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="Misi_a" class="form-label  mt-2">Misi</label>
+                            <label for="Misi_a" class="form-label  mt-2">Misi point a</label>
                             <input type="text" class="form-control" id="Misi_a" name="Misi_a" value="{{ $item->Misi_a }}" required />
                         </div>
                         
                         <div class="form-group">
-                            <label for="Misi_b" class="form-label  mt-2">Misi</label>
+                            <label for="Misi_b" class="form-label  mt-2">Misi point b</label>
                             <input type="text" class="form-control" id="Misi_b" name="Misi_b" value="{{ $item->Misi_b }}" required />
                         </div>
                         
                         <div class="form-group">
-                            <label for="Misi_c" class="form-label  mt-2">Misi</label>
+                            <label for="Misi_c" class="form-label  mt-2">Misi point c</label>
                             <input type="text" class="form-control" id="Misi_c" name="Misi_c" value="{{ $item->Misi_c }}" required />
                         </div>
                         <div class="form-group">
-                            <label for="Misi_d" class="form-label  mt-2">Misi</label>
+                            <label for="Misi_d" class="form-label  mt-2">Misi point d</label>
                             <input type="text" class="form-control" id="Misi_d" name="Misi_d" value="{{ $item->Misi_d }}" required />
                         </div>
                         <div class="form-group">
-                            <label for="Misi_e" class="form-label  mt-2">Misi</label>
+                            <label for="Misi_e" class="form-label  mt-2">Misi point e</label> <small class="text-danger"><i>*(-) jika tidak diisi</i></small>
                             <input type="text" class="form-control" id="Misi_e" name="Misi_e" value="{{ $item->Misi_e }}" required />
                         </div>
                         <div class="form-group">

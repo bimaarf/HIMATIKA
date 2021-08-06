@@ -53,8 +53,8 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-          <img src="#" height="25" alt="" loading="lazy" />
+        <a class="navbar-brand" href="{{ route('fe-berita.index') }}">
+          <img src="{{ asset('/frontend/assets/img/footer/cropped-Untitled-1-300x300.jpg') }}" height="25" alt="" loading="lazy" />
         </a>
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">

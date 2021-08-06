@@ -2,6 +2,12 @@
 <html lang="en">
 
     <head>
+         <!--ads-->
+        <script data-ad-client="ca-pub-2559852980754958" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <!--ads-->
+        <meta name="keywords" content="himatika untan, himatikauntan">
+        <meta name="description" content="HIMATIKA ( Himpunan Mahasiswa Matematika ) FMIPA UNTAN merupakan Himpunan termuda yang ada di Universitas Tanjungpura. Pada awalnya himpunan ini bernama HIMMASI (Himpunan Mahasiswa Matematika Science) yang dibentuk pada tanggal 18 September 2002">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,15 +26,16 @@
     
         <!-- Custom Style   -->
         <link rel="stylesheet" href="{{ asset('frontend/css/Style.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/Styles.css') }}">
         <!-- <link rel="stylesheet" href="./css/blog.css"> -->
         <!-- home -->
         <meta name="description" content="HIMATIKA ( Himpunan Mahasiswa Matematika ) FMIPA UNTAN merupakan Himpunan termuda yang ada di Universitas Tanjungpura. Pada awalnya himpunan ini bernama HIMMASI (Himpunan Mahasiswa Matematika Science) yang dibentuk pada tanggal 18 September 2002">
         <meta name="keywords" content="himatika, untan, himatikauntan, himatika untan">
         <link rel='dns-prefetch' href='/himatikauntan.org' />
-        <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-1-300x300.jpg') }}" sizes="32x32" />
-        <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-1-300x300.jpg') }}" sizes="192x192" />
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-1-300x300.jpg') }}">
-        <meta name="msapplication-TileImage" content="{{ asset('frontend/assets/img/footer/cropped-Untitled-1-300x300.jpg') }}">
+        <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}" sizes="32x32" />
+        <link rel="icon" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}" sizes="192x192" />
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}">
+        <meta name="msapplication-TileImage" content="{{ asset('frontend/assets/img/footer/cropped-Untitled-2-180x180.png') }}">
         
     </head>
 

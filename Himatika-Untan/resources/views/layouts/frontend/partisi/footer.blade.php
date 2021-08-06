@@ -14,14 +14,14 @@
             <div class="instagram" data-aos="fade-left" data-aos-delay="200">
                 <h2>Instagram</h2>
                 <div class="flex-row">
-                    <img src="./assets/img/footer/HIMATIKA-LOYALITAS-300x300.jpg" alt="insta1">
-                    <img src="./assets/img/footer/akademik.jpg" alt="insta2">
-                    <img src="./assets/img/footer/humas.jpg" alt="insta3">
+                    <img src="{{ asset('/frontend/assets/img/footer/HIMATIKA-LOYALITAS-300x300.jpg') }}" alt="insta1">
+                    <img src="{{ asset('/frontend/assets/img/footer/akademik.jpg') }}" alt="insta2">
+                    <img src="{{ asset('/frontend/assets/img/footer/humas.jpg') }}" alt="insta3">
                 </div>
                 <div class="flex-row">
-                    <img src="./assets/img/footer/kewirausahaan.jpg" alt="insta4">
-                    <img src="./assets/img/footer/olahraga.jpg" alt="insta5">
-                    <img src="./assets/img/footer/psdm.jpg" alt="insta6">
+                    <img src="{{ asset('/frontend/assets/img/footer/kewirausahaan.jpg') }}" alt="insta4">
+                    <img src="{{ asset('/frontend/assets/img/footer/olahraga.jpg') }}" alt="insta5">
+                    <img src="{{ asset('/frontend/assets/img/footer/psdm.jpg') }}" alt="insta6">
                 </div>
             </div>
             <div class="follow" data-aos="fade-left" data-aos-delay="200">
@@ -29,8 +29,8 @@
                 <p>Let us be Social</p>
                 <div>
                     <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
+                    <a href="https://instagram.com/bimaarf_"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/bimaarf_"><i class="fab fa-instagram"></i></a>
                     <i class="fab fa-youtube"></i>
                 </div>
             </div>
@@ -38,8 +38,7 @@
         <div class="rights flex-row">
             <h4 class="text-gray">
                 Copyright ©2021 HIMATIKA FMIPA UNTAN | made by
-                <a href="www.youtube.com/c/dailytuition" target="_black">Daily Tuition <i class="fab fa-youtube"></i>
-                    Channel</a>
+                <a href="https://instagram.com/bimaarf_" target="_black">Developed by <i class="fab fa-instagram"></i> bimaarf_</a>
             </h4>
         </div>
         <div class="move-up">

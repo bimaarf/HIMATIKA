@@ -3,8 +3,12 @@
 
 <section class="site-title">
     <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+        @foreach ($struktur as $str)
+        <img src="{{ asset('gambar/'. $str->cover_img) }}" class="sumage " alt="">
+        @endforeach
         <h3>Universitas Tanjungpura</h3>
         <h1>HIMATIKA FMIPA UNTAN</h1>
+            
         <button class="btn">Selamat datang di webbsite resmi kami</button>
     </div>
 </section>
@@ -18,7 +22,7 @@
                     <img class="galeri" src="{{ asset('gambar/'. $brt->cover_img) }}" alt="Image Error!">
                     <div class="blog-title">
                         <h3>{{ $brt->judul }}</h3>
-                    <a href="#"><button class="btn btn-blog" >Read More </button></a>
+                    <a href="{{route('fe-berita.views',['key'=>$brt->key])}}"><button class="btn btn-blog" >Read More </button></a>
                         <span>{{ $brt->created_at }}</span>
                     </div>
                 </div>
@@ -29,7 +33,7 @@
     </div>
    
 </section>
-<div class=" t-mobile" style="margin-top:80px;"></div>
+<div class=" t-mobile" style="margin-top:200px;"> </div>
 <section class="container mobile-container" style="margin-top: -200px; ">
     <div class="site-content">
         <div class="posts">
@@ -47,9 +51,9 @@
                     </div>
                 </div>
                 <div class="post-title">
-                    <a href="#">{{ $brt->judul }}</a>
+                    <a href="{{route('fe-berita.views',['key'=>$brt->key])}}">{{ $brt->judul }}</a>
                     <p class="bot-post-title ticket-text">{{ substr($brt->isi, 0, 300) }}...</p>
-                    <a href="#"><button class="btn post-btn ticket-text">  Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
+                    <a href="{{route('fe-berita.views',['key'=>$brt->key])}}"><button class="btn post-btn ticket-text">  Read More &nbsp; <i class="fas fa-arrow-right"></i></button></a>
                     <hr>
                 </div> 
             </div>

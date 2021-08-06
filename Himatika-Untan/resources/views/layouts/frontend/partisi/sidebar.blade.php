@@ -28,9 +28,9 @@
                         </ul>
                     </div> -->
                     <div class="popular-post">
-                        <h2>Popular Post</h2>
+                        <h2>Recent Post</h2>
                         <hr>
-                        @foreach($berita as $brt)
+                        @foreach($side as $brt)
                         <div class="post-content" data-aos="flip-up" data-aos-delay="200" >
                             <div class="post-image">
                                 <div>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="post-title">
-                                <a href="#">{{ $brt->judul }}</a>
+                                <a href="{{route('fe-berita.views',['key'=>$brt->key])}}">{{ $brt->judul }}</a>
                             </div>
                         </div>
                         @endforeach
