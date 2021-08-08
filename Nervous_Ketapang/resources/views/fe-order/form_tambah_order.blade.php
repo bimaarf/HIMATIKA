@@ -1,6 +1,5 @@
 @extends('layouts.frontend.main_order')
 @section('content')
-	
 	<div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
@@ -8,37 +7,75 @@
   	</ol>
   <h6 class="slim-pagetitle">Order</h6>
   </div>
-		<form method="POST" action="{{ route('fe-product.tambah') }}" enctype="multipart/form-data">
+		<form method="POST" action="{{ route('fe-order.tambah', ['id'=>$product->id]) }}" id="formD" name="formD" enctype="multipart/form-data">
 			@csrf
-		<div class="form-group">
-			<label>Product Name</label>
-			<input class="form-control" type="text" name="title" maxlength="150">
-		</div>
-		
-		<div class="form-group">
-			<label>Description</label>
-			<textarea class="form-control" name="deskripsi" maxlength="255"></textarea>
-		</div>
-		<div class="form-group">
-			<label>Stock</label>
-			<input class="form-control" type="number" name="stok" maxlength="4">
-		</div>		
-		<div class="form-group">
-			<label>Starting Price</label>
-			<input class="form-control" type="num" name="harga_awal" value="0" readonly maxlength="15">
-		</div>	
-		<div class="form-group">
-			<label>Final Price</label>
-			<input class="form-control" type="num" id="num" name="harga_akhir" maxlength="15">
-		</div>	
-		<div class="form-group">
-			<label>Image</label>
-			<input class="form-control" type="file" name="cover_img" required>
-		</div>		
+			<div class = "row form-group">
+				<div class="col-lg-5"> 
+					<img src="{{ asset('produk/'. $product->cover_img )}}" class="rounded float-left img-thumbnail" style="width:350px;height:400px" alt="...">
+
+				</div>
+					<div class="col-lg-7 table-responsive text-justify pull-left mt-2"> 
+						<table class=" mg-b-0 tx-12 ">
+							<tr align=left valign=top>
+								<td class="col-4">Product Name</td>
+								<td class="col-4">:</td>
+								<td class="col-4">{{ $product->title }}</td>
+							</tr>
+							<tr align=left valign=top>
+								<td class="col-4 ">Description</td>
+								<td class="col-4">:</td>
+								<td class="col-4 ">{{ $product->deskripsi }}</td>
+							</tr>
+							<tr align=left valign=top>
+								<td class="col-2">Price</td>
+								<td class="col-1">:</td>
+								<td class="col-2" name="price" >Rp {{ $product->harga_akhir }}</td>
+							</tr>
+						</table>
+				</div>
+			</div>
 			
-		<hr>
-		<input class="btn btn-outline-info pd-10-force col-md-2 " type="submit" onclick="showValue()" />
-		&emsp;
-		<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Back"></a>
+			<div class="form-group">
+				<label>Quantity</label>
+				<input class="form-control" type="num" name="quantity"  onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" maxlength="4" required>
+			</div>		
+			<div class="form-group">
+				<label>Total Price</label>
+				<input class="form-control" type="hidden" name="harga_akhir" value="<?php
+				$bute = preg_replace("/[^0-9]/", "", $product->harga_akhir);echo $bute; ?>" onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" required>
+			</div>	
+
+			<div class="input-group form-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text text-white">Rp</div>
+				  </div>
+				<input class="form-control" id="num" type="text" name="price" value="0" onkeyup="OnChange(this.value)"  onKeyPress="return isNumberKey(event)" readonly maxlength="15" required>
+			</div>
+				
+			<div class="form-group">
+				<label>Address</label>
+				<textarea class="form-control" name="address" maxlength="255" required></textarea>
+			</div>
+			<div class="form-group">
+				<label>Message</label>
+				<textarea class="form-control" name="message" placeholder="Specify color and size" maxlength="255" required></textarea>
+			</div>
+				
+			<hr>
+			<input class="btn btn-outline-info pd-10-force col-md-2 " type="submit" onclick="showValue()" />
+			&emsp;
+			<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Back"></a>
 		</form>
+		<script type="text/javascript" language="Javascript">
+			hargasatuan = document.formD.harga_akhir.value;
+			document.formD.price.value = hargasatuan;
+			jumlah = document.formD.quantity.value;
+			document.formD.price.value = jumlah;
+			function OnChange(value){
+			  hargasatuan = document.formD.harga_akhir.value;
+			  jumlah = document.formD.quantity.value;
+			  price = hargasatuan * jumlah;
+			  document.formD.price.value = price;
+			}
+		  </script>
 @endsection

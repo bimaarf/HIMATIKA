@@ -11,8 +11,27 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function formTambah()
+    public function formTambah($slug)
     {
-        return view('fe-order.form_tambah_order');
+        $product = Product::where('slug', $slug)->first();
+        return view('fe-order.form_tambah_order', compact('product'));
+    }
+    public function tambah(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $order = new Order();
+        $order->user_id = Auth::id();
+        $order->product_id = $product->id;
+        $order->quantity = $request->quantity;
+        $order->price = $request->price;
+        $order->address = $request->address;
+        $order->message = $request->message;
+        
+        if ($order->save())
+        {
+            return redirect()->route('fe-index.index')->withSuccess('Update success!');
+        }else{
+            return redirect()->route('fe-order.form_tambah_order')->withErrors($order->errors());
+        }
     }
 }

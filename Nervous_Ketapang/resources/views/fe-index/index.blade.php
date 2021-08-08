@@ -1,6 +1,12 @@
 @extends('layouts.frontend.main')
 @section('content')
 <!-- Home -->
+@if ($message = Session::get('sukses'))
+<div class="alert alert-success alert-block">
+<button type="button" class="close" data-dismiss="alert">×</button> 
+<strong>{{ $message }}</strong>
+</div>
+@endif
     <div class="tab-content force-overfow force-overflow">
         <div class="tab-pane active" id="home">
 
@@ -40,6 +46,6 @@
         
     </div>
 
-
+  
 <!-- End Home -->
 @endsection

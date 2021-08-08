@@ -1,6 +1,5 @@
 @extends('layouts.frontend.main_produk')
 @section('content')
-
 <div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
@@ -8,6 +7,27 @@
 	</ol>
 	<h6 class="slim-pagetitle">Product</h6>
 </div>
+		 
+@if ($message = Session::get('sukses'))
+	<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button> 
+	<strong>{{ $message }}</strong>
+	</div>
+@endif
+@if ($message = Session::get('gagal'))
+	<div class="alert alert-danger alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button> 
+	<strong>{{ $message }}</strong>
+	</div>
+@endif
+@if ($message = Session::get('peringatan'))
+				<div class="alert alert-warning alert-block">
+					<button type="button" class="close" data-dismiss="alert">×</button> 
+					<strong>{{ $message }}</strong>
+				</div>
+				@endif
+<br>
+
 @if ($product->user_id ==  Auth::user()->id)
 		<form method="POST" action="{{ route('fe-product.ubah', ['slug'=>$product->slug]) }}" enctype="multipart/form-data">
 			@csrf
@@ -40,7 +60,12 @@
 		<hr>
 		<input class="btn btn-outline-info pd-10-force col-md-2 " value="Update" type="submit" onclick="showValue()">
 		&emsp;
-		<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Batal"></a>
+		<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Back"></a>
 		</form>
+
+
 @endif
+
+
 @endsection
+

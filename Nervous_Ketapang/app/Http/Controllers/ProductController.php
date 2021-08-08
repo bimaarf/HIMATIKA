@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\User;
+use Session;
 
 class ProductController extends Controller
 {
@@ -72,12 +73,15 @@ class ProductController extends Controller
         
         if($product->update())
         {
+            Session::flash('sukses','Product changed successfully');
 
-            return redirect()->route('fe-index.index')->withSuccess('Update success!');
+            return redirect()->route('fe-product.form_ubah_product', ['slug' => $product->slug]);
+
         }
-        else
+        if($product->errors())
         {
-            return redirect()->route('fe-index.index')->withDanger('Update Error');
+            Session::flash('gagal','product does not change');
+            return redirect()->route('fe-product.form_ubah_product', ['slug' => $product->slug]);
             
         }
 

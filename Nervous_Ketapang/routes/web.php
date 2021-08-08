@@ -29,7 +29,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 // frontend
 Route::get('/', [SiteController::class, 'index'])->name('fe-index.index');
-Route::get('/order', [OrderController::class, 'formTambah'])->name('fe-order.form_tambah_order');
+Route::get('/order/{slug}', [OrderController::class, 'formTambah'])->name('fe-order.form_tambah_order')->middleware('auth');
+Route::post('/order-tambah{id}', [OrderController::class, 'tambah'])->name('fe-order.tambah')->middleware('auth');
 
 
 // form product

@@ -1,6 +1,8 @@
 @extends('layouts.frontend.main_produk')
 @section('content')
-	
+@error('user_contact')
+<div style="color: red;">{{ $message }}</div>
+@enderror
 	<div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
 		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
@@ -33,7 +35,7 @@
 		</div>	
 		<div class="form-group">
 			<label>Image</label>
-			<input class="form-control" type="file" name="cover_img" required>
+			<input class="form-control" type="file" name="cover_img" >
 		</div>		
 			
 		<hr>

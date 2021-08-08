@@ -20,6 +20,7 @@ class CreateOrderTable extends Migration
             $table->integer('quantity');
             $table->integer('price');
             $table->string('address', 255);
+            $table->string('message', 255);
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('product');
             $table->timestamps();

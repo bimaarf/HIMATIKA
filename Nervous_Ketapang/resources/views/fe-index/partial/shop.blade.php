@@ -16,7 +16,7 @@
           <li class="card bd-1" style="padding-top:10px; margin:10px">
             {{-- window --}}
             
-          <a href="#"><img class="" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
+          <a href="{{ route('fe-order.form_tambah_order', ['slug'=>$pd->slug]) }}"><img class="" src="{{ asset('produk/'. $pd->cover_img )}}"></a>
         
         <div class="space"></div>
         

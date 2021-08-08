@@ -109,7 +109,7 @@
     </div><!-- slim-navbar -->
     @if(Auth::check())
 						    <!-- MODAL EFFECTS -->
-								<div id="modaldemo6" class="modal fade">
+					<div id="modaldemo6" class="modal fade">
     			  <div class="modal-dialog modal-dialog-vertical-center" role="document">
     			    <div class="modal-content bd-0 tx-14 rounded">
     			      <div class="modal-header pd-y-20 pd-x-25">
