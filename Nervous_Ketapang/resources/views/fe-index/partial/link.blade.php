@@ -39,7 +39,7 @@
                   <div class="modal-body pd-25">
                     <h5 class="lh-3 mg-b-20 tx-inverse"></h5>• {{$pd->title}}</h5>
                     <h5 class="lh-3 mg-b-20 tx-inverse"></h5>• Rp {{$pd->harga_akhir}}</h5>
-                    <img src="{{ asset('produk/'. $pd->cover_img) }}" class=" mx-auto d-block" alt="">
+                    <img src="{{ asset('storage/produk/'. $pd->cover_img) }}" class=" mx-auto d-block" alt="">
                     <p class="mg-b-5">Are you sure you want to delete this item? <u>Confirm and delete!</u> </p>
                   </div>
                   <div class="modal-footer rounded">
@@ -51,7 +51,7 @@
             </div><!-- modal -->
             
               
-            <a href="#"><img src="{{ asset('produk/'. $pd->cover_img )}}"></a>
+            <a href="#"><img src="{{ asset('storage/produk/'. $pd->cover_img )}}"></a>
           
           <div class="space"></div>
           

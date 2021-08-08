@@ -10,11 +10,30 @@
   	</ol>
   <h6 class="slim-pagetitle">Add</h6>
   </div>
+  @if ($message = Session::get('sukses'))
+	<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button> 
+	<strong>{{ $message }}</strong>
+	</div>
+@endif
+@if ($message = Session::get('gagal'))
+	<div class="alert alert-danger alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button> 
+	<strong>{{ $message }}</strong>
+	</div>
+@endif
+@if ($message = Session::get('peringatan'))
+				<div class="alert alert-warning alert-block">
+					<button type="button" class="close" data-dismiss="alert">×</button> 
+					<strong>{{ $message }}</strong>
+				</div>
+				@endif
+<br>
 		<form method="POST" action="{{ route('fe-product.tambah') }}" enctype="multipart/form-data">
 			@csrf
 		<div class="form-group">
 			<label>Product Name</label>
-			<input class="form-control" type="text" name="title" maxlength="150">
+			<input class="form-control" type="text" name="title" maxlength="150" required>
 		</div>
 		
 		<div class="form-group">
@@ -23,7 +42,7 @@
 		</div>
 		<div class="form-group">
 			<label>Stock</label>
-			<input class="form-control" type="number" name="stok" maxlength="4">
+			<input class="form-control" type="number" name="stok" maxlength="4" required>
 		</div>		
 		<div class="form-group">
 			<label>Starting Price</label>
@@ -31,11 +50,11 @@
 		</div>	
 		<div class="form-group">
 			<label>Final Price</label>
-			<input class="form-control" type="num" id="num" name="harga_akhir" maxlength="15">
+			<input class="form-control" type="num" id="num" name="harga_akhir" maxlength="15" required>
 		</div>	
 		<div class="form-group">
-			<label>Image</label>
-			<input class="form-control" type="file" name="cover_img" >
+			<label>Image</label> <small class="text-danger"> <i>*max:1024</i></small>
+			<input class="form-control" type="file" name="cover_img"  required>
 		</div>		
 			
 		<hr>

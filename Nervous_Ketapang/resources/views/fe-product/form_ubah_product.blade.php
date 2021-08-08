@@ -53,7 +53,7 @@
 			<input class="form-control" type="num" name="harga_akhir" id="num" required>
 		</div>	
 		<div class="form-group">
-			<label>Image</label>
+			<label>Image</label> <small class="text-danger"> <i>*max:1024</i></small>
 			<input class="form-control" type="file" name="cover_img">
 		</div>		
 			

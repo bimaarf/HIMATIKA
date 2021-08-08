@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Product;
-use App\Models\User;
 use Session;
 
 class ProductController extends Controller
@@ -17,13 +16,25 @@ class ProductController extends Controller
     }
     public function tambah(Request $request)
     {
-        $target_directory = 'produk';
         $request->validate([
-            'cover_img'=>'mimes:png,jpg,jpeg|max:1024',
+            'title' => 'required',
+            'cover_img'=>'required|image|mimes:png,jpg,jpeg|max:1024',
         ]);
         $file = $request->file('cover_img');
         $filename = time().'-'.$file->getClientOriginalName() ;
-        $request->cover_img->move(public_path('produk'), $filename);
+        $request->cover_img->storeAs('produk', $filename);
+
+        // Product::create([
+        //     'slug' => Str::slug($request->title, '-'),
+        //     'key' => Str::random(30),
+        //     'title' => $request->title,
+        //     'deskripsi' => $request->deskripsi,
+        //     'stok' => $request->stok,
+        //     'harga_awal' => $request->harga_awal,
+        //     'harga_akhir' => $request->harga_akhir,
+        //     'cover_img' => $request->cover_img,
+        //     'user_id' =>auth()->user()->id,
+        // ]);
 
         $product = new Product();
         $product->slug = Str::slug($request->title, '-'); 
@@ -37,9 +48,15 @@ class ProductController extends Controller
         $product->user_id = Auth::id();
         if($product->save())
         {
-            return redirect()->route('fe-index.index');
-        }else{
-            return redirect()->route('fe-index.form_tambah_product');
+            Session::flash('sukses','Product Added successfully');
+
+            return redirect()->route('fe-product.form_tambah_product');
+
+        }elseif($product->error())
+        {
+            Session::flash('gagal','product does not added');
+            return redirect()->route('fe-product.form_tambah_product');
+            
         }
 
     }
@@ -60,25 +77,25 @@ class ProductController extends Controller
         $product->harga_awal = $request->harga_awal;
         $product->harga_akhir = $request->harga_akhir;
         $product->user_id = Auth::id();
+        $request->validate([
+            'title' => 'required',
+            'cover_img'=>'required|image|mimes:png,jpg,jpeg|max:1024',
+        ]);
         if($request->hasFile('cover_img')) {
             
             $cover_img = $request->file('cover_img');
             $filename = time().'-'.$cover_img->getClientOriginalName() ;
             $product->cover_img = $filename;
-            $request->validate([
-                'cover_img'=>'mimes:png,jpg,jpeg|max:1024',
-            ]);
-            $request->cover_img->move(public_path('produk'), $filename);
+            $request->cover_img->storeAs('produk', $filename);
+            
         }
-        
         if($product->update())
         {
             Session::flash('sukses','Product changed successfully');
 
             return redirect()->route('fe-product.form_ubah_product', ['slug' => $product->slug]);
 
-        }
-        if($product->errors())
+        }else
         {
             Session::flash('gagal','product does not change');
             return redirect()->route('fe-product.form_ubah_product', ['slug' => $product->slug]);
