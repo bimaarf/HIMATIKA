@@ -1,13 +1,8 @@
 @extends('layouts.frontend.main')
 @section('content')
 <!-- Home -->
-@if ($message = Session::get('sukses'))
-<div class="alert alert-success alert-block">
-<button type="button" class="close" data-dismiss="alert">×</button> 
-<strong>{{ $message }}</strong>
-</div>
-@endif
-    <div class="tab-content force-overfow force-overflow">
+<div class="tab-content force-overfow force-overflow">
+        
         <div class="tab-pane active" id="home">
 
             @include('fe-index.partial.home')
@@ -18,34 +13,36 @@
             
             @include('fe-index.partial.shop')
             
-        </div><!-- tab-pane -->
+        </div>
         
             @if (Auth::check())
             
                 <div class="tab-pane" id="link">
             
-                @include('fe-index.partial.link')
+                    @include('fe-index.partial.link')
             
+                </div>
+
+                {{-- Result --}}
                 
-                </div><!-- tab-pane -->
+                <div class="tab-pane null" id="result">
+                    
+                    @include('fe-index.partial.result')
+        
+                </div>
 
             @endif
             
-        <div class="tab-pane null" id="result">
                 
-        <h2>result</h2>
-
-        </div><!-- tab-pane -->
 
         <div class="tab-pane" id="profile">
 
         <h2>profil</h2>
                     
-        </div><!-- tab-pane -->
+        </div>
 
-        
     </div>
-
+    
   
 <!-- End Home -->
 @endsection

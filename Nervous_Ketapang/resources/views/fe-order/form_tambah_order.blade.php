@@ -11,7 +11,7 @@
 			@csrf
 			<div class = "row form-group">
 				<div class="col-lg-5"> 
-					<img src="{{ asset('produk/'. $product->cover_img )}}" class="rounded float-left img-thumbnail" style="width:350px;height:400px" alt="...">
+					<img src="{{ asset('storage/produk/'. $product->cover_img )}}" class="rounded float-left img-thumbnail" style="width:350px;height:400px" alt="...">
 
 				</div>
 					<div class="col-lg-7 table-responsive text-justify pull-left mt-2"> 

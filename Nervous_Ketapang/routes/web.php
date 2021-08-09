@@ -31,6 +31,7 @@ require __DIR__.'/auth.php';
 Route::get('/', [SiteController::class, 'index'])->name('fe-index.index');
 Route::get('/order/{slug}', [OrderController::class, 'formTambah'])->name('fe-order.form_tambah_order')->middleware('auth');
 Route::post('/order-tambah{id}', [OrderController::class, 'tambah'])->name('fe-order.tambah')->middleware('auth');
+Route::get('/delete/order/{id}', [OrderController::class, 'hapus'])->name('fe-order.hapus')->middleware('auth');
 
 
 // form product

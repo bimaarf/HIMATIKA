@@ -55,16 +55,11 @@
 		</style>
 	</head>
 	<body class="slim-sticky-header scrollbar scrollbar-near-moon thin">
-		@if(Session::has('jsAlert'))
 
-		<script type="text/javascript" >
-			alert({{ session()->get('jsAlert') }});
-		</script>
-		
-		@endif
 		@include('layouts.frontend.partial.header')
 
 			<div class="container">
+				
 				@yield('content')
 			</div>
 

@@ -79,15 +79,15 @@ class ProductController extends Controller
         $product->user_id = Auth::id();
         $request->validate([
             'title' => 'required',
-            'cover_img'=>'required|image|mimes:png,jpg,jpeg|max:1024',
+            'cover_img'=>'image|mimes:png,jpg,jpeg|max:1024',
         ]);
         if($request->hasFile('cover_img')) {
             
             $cover_img = $request->file('cover_img');
             $filename = time().'-'.$cover_img->getClientOriginalName() ;
             $product->cover_img = $filename;
-            $request->cover_img->storeAs('produk', $filename);
             
+            $request->cover_img->storeAs('produk', $filename);
         }
         if($product->update())
         {
@@ -108,6 +108,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
+        Session::flash('sukses_produk','Product deleted successfully');
         return redirect()->route('fe-index.index');
     }
 

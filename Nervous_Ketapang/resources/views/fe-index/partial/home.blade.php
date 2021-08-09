@@ -6,6 +6,20 @@
     <h6 class="slim-pagetitle">Home</h6>
     </div><!-- slim-pageheader -->    
 
+    @if ($message = Session::get('sukses'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+    
+    @if ($message = Session::get('sukses_produk'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">x</button> 
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
     <!-- ARTIKEL -->
     <div class="card mg-t-20-force">
         <div class="col-lg-t-5">

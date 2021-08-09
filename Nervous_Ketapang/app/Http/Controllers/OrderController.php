@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Order;
+use Session;
 
 use Illuminate\Http\Request;
 
@@ -33,5 +34,12 @@ class OrderController extends Controller
         }else{
             return redirect()->route('fe-order.form_tambah_order')->withErrors($order->errors());
         }
+    }
+    public function hapus($id)
+    {
+        $order = Order::find($id);
+        $order->delete();
+        Session::flash('sukses','Order deleted successfully');
+        return redirect()->route('fe-index.index');
     }
 }
