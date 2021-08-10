@@ -22,6 +22,7 @@ class CreateProductTable extends Migration
             $table->integer('stok');
             $table->string('harga_awal', '100');
             $table->string('harga_akhir', '100');
+            $table->bigInteger('telp');
             $table->string('cover_img', 255);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

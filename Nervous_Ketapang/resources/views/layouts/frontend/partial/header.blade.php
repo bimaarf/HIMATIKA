@@ -91,13 +91,13 @@
               <span>My Shop</span>
             </a>
           </li>
-          @endif
           <li class="nav-item">
             <a class="nav-link null" href="#result" data-toggle="tab">
               <i class="icon ion-stats-bars"></i>
               <span>Result</span>
             </a>
           </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link" href="#profile" data-toggle="tab">
               <i class="icon ion-grid"></i>

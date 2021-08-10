@@ -25,6 +25,7 @@ class OrderController extends Controller
         $order->product_id = $product->id;
         $order->quantity = $request->quantity;
         $order->price = $request->price;
+        $order->telp = $request->telp;
         $order->address = $request->address;
         $order->message = $request->message;
         

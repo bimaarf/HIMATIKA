@@ -44,6 +44,7 @@ class ProductController extends Controller
         $product->stok = $request->stok;
         $product->harga_awal = $request->harga_awal;
         $product->harga_akhir = $request->harga_akhir;
+        $product->telp = $request->telp;
         $product->cover_img = $filename;
         $product->user_id = Auth::id();
         if($product->save())
@@ -76,6 +77,7 @@ class ProductController extends Controller
         $product->stok = $request->stok;
         $product->harga_awal = $request->harga_awal;
         $product->harga_akhir = $request->harga_akhir;
+        $product->telp = $request->telp;
         $product->user_id = Auth::id();
         $request->validate([
             'title' => 'required',

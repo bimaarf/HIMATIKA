@@ -37,7 +37,7 @@
 			
 			<div class="form-group">
 				<label>Quantity</label>
-				<input class="form-control" type="num" name="quantity"  onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" maxlength="4" required>
+				<input class="form-control" type="num" name="quantity"  onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" maxlength="4" min="1" max="{{ $product->stok }}" required>
 			</div>		
 			<div class="form-group">
 				<label>Total Price</label>
@@ -52,6 +52,10 @@
 				<input class="form-control" id="num" type="text" name="price" value="0" onkeyup="OnChange(this.value)"  onKeyPress="return isNumberKey(event)" readonly maxlength="15" required>
 			</div>
 				
+			<div class="form-group">
+				<label><i class="fa fa-whatsapp text-success"></i> Whatsapp</label> <small class="text-danger"><i>*Enter your whatsapp number for easy transaction</i></small>
+				<input type="number" class="form-control" name="telp" placeholder="6281XXX" maxlength="20" required>
+			</div>
 			<div class="form-group">
 				<label>Address</label>
 				<textarea class="form-control" name="address" maxlength="255" required></textarea>

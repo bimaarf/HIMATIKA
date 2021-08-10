@@ -19,6 +19,7 @@ class CreateOrderTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->integer('price');
+            $table->bigInteger('telp');
             $table->string('address', 255);
             $table->string('message', 255);
             $table->foreign('user_id')->references('id')->on('users');

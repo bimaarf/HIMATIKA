@@ -53,6 +53,10 @@
 			<input class="form-control" type="num" id="num" name="harga_akhir" maxlength="15" required>
 		</div>	
 		<div class="form-group">
+			<label><i class="fa fa-whatsapp text-success"></i> Whatsapp</label> <small class="text-danger"><i>*Enter your whatsapp number for easy transaction</i></small>
+			<input type="number" class="form-control" name="telp" placeholder="6281XXX" maxlength="20" required>
+		</div>
+		<div class="form-group">
 			<label>Image</label> <small class="text-danger"> <i>*max:1024</i></small>
 			<input class="form-control" type="file" name="cover_img"  required>
 		</div>		

@@ -31,15 +31,15 @@
         
                 </div>
 
+                <div class="tab-pane" id="profile">
+        
+                    @include('fe-index.partial.profile')
+                            
+                </div>
             @endif
             
                 
 
-        <div class="tab-pane" id="profile">
-
-        <h2>profil</h2>
-                    
-        </div>
 
     </div>
     

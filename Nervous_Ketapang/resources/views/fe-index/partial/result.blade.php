@@ -22,7 +22,7 @@
                 <div class="modal-dialog modal-dialog-vertical-center" role="document">
                     <div class="modal-content bd-0 tx-14 rounded">
                         <div class="modal-header pd-y-20 pd-x-25">
-                            <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"><i class="fa fa-trash tx-18-force"> </i> Delete item</h6>
+                            <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"><i class="fa fa-trash tx-18-force"> </i> Cancel Order</h6>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
                         </div>
@@ -84,8 +84,8 @@
                     </div>
                 </table>
                 <div class="p-2 bd-highlight">
-                    <a href="#modaldeleted{{ $ord->id }}" class="btn-sm btn btn-danger"  data-toggle="modal" data-effect="effect-just-me">Cancel order</a>
-                    <a href="#" class="btn-sm btn btn-success" > <i class="fa fa-whatsapp"></i> Chat</a>
+                    <a href="#modaldeleted{{ $ord->id }}" class="btn-sm btn btn-danger"  data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash"></i> Return</a>
+                    <a href="https://wa.me/{{ $ord->product->telp }}" class="btn-sm btn btn-success" > <i class="fa fa-whatsapp"></i> Chat</a>
                 </div>
             </p>
         </div><!-- post-item -->
