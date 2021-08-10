@@ -31,13 +31,18 @@
 								<td class="col-1">:</td>
 								<td class="col-2" name="price" >Rp {{ $product->harga_akhir }}</td>
 							</tr>
+							<tr align=left valign=top>
+								<td class="col-2">Stock</td>
+								<td class="col-1">:</td>
+								<td class="col-2" name="price" >{{ $product->stok }}</td>
+							</tr>
 						</table>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label>Quantity</label>
-				<input class="form-control" type="num" name="quantity"  onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" maxlength="4" min="1" max="{{ $product->stok }}" required>
+				<label>Quantity</label> <small class="text-danger"><i>*Stock {{ $product->stok }}, please see stock before input</i></small>
+				<input class="form-control" type="num" name="quantity"  onkeyup="OnChange(this.value)" onKeyPress="return isNumberKey(event)" maxlength="4" min="1" max="{{ $product->stok }}" placeholder="Maximal input {{ $product->stok }}" required>
 			</div>		
 			<div class="form-group">
 				<label>Total Price</label>
@@ -54,11 +59,11 @@
 				
 			<div class="form-group">
 				<label><i class="fa fa-whatsapp text-success"></i> Whatsapp</label> <small class="text-danger"><i>*Enter your whatsapp number for easy transaction</i></small>
-				<input type="number" class="form-control" name="telp" placeholder="6281XXX" maxlength="20" required>
+				<input type="num" class="form-control" name="telp" placeholder="6281XXX" pattern= "[0-9]+" maxlength="16" required>
 			</div>
 			<div class="form-group">
 				<label>Address</label>
-				<textarea class="form-control" name="address" maxlength="255" required></textarea>
+				<textarea class="form-control" name="address" maxlength="255" placeholder="Full address to facilitate the process between goods" required></textarea>
 			</div>
 			<div class="form-group">
 				<label>Message</label>
