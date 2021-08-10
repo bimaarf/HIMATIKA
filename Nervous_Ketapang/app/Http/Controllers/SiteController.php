@@ -12,9 +12,10 @@ class SiteController extends Controller
 {
     public function index()
     {
+        $user = User::all();
         $product = Product::orderBy('id', 'DESC')->get();
         $order = Order::orderBy('id', 'DESC')->get();
-        return view('fe-index.index',compact('product', 'order'));
+        return view('fe-index.index',compact('product', 'order', 'user'));
     }
     public function order()
     {
