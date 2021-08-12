@@ -82,7 +82,7 @@
                 </table>
                 <div class="p-2 bd-highlight">
                     <a href="#modaldeleted{{ $ord->id }}" class="btn-sm btn btn-danger"  data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash"></i> Return</a>
-                    <a href="https://wa.me/{{ $ord->product->telp }}" class="btn-sm btn btn-success" > <i class="fa fa-whatsapp"></i> Chat</a>
+                    <a href="https://wa.me/{{ $ord->telp }}" class="btn-sm btn btn-success" > <i class="fa fa-whatsapp"></i> Chat</a>
                 </div>
             </p>
         </div><!-- post-item -->

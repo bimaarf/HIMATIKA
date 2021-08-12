@@ -1,7 +1,7 @@
 <div class="slim-header" id="refresh">
       <div class="container">
         <div class="slim-header-left">
-          <h2 class="slim-logo"><a href="#">Nerv<span>ous</span></a></h2>
+          <h2 class="slim-logo"><a href="{{ route('fe-index.index') }}">Nerv<span>ous</span></a></h2>
 
           <div class="search-box">
             <input type="text" class="form-control" placeholder="Search">

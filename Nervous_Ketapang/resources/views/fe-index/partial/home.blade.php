@@ -104,17 +104,24 @@
                                 </a>
                             @endif
 
+
                         <div class="col-8 float-left mb-3"><span>Suggestions For You</span><span class="tx-12 float-right">See All</span></div>
-                        @foreach ($user as $item)
-                        <div class="col-8 fa-pull-left">
-                            <a href="https://instagram.com/">
-                                <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
-                                <span class="text-white">{{ $item->name }}</span>
-                                <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                <span class="tx-12 fa-pull-right"> <b>Visit  </b></span>
-                            </a> 
-                                <hr>
-                        </div> 
+                        @foreach ($roleUser as $rol)
+                            
+                            @foreach ($user as $item)
+                                @if ($item->id == $rol->user_id)
+                                    <div class="col-8 fa-pull-left">
+                                        <a href="https://instagram.com/">
+                                            <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
+                                            <span class="text-white">{{ $item->name }}</span>
+                                            <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                            <span class="tx-12 fa-pull-right"> <b>Visit  </b></span>
+                                        </a> 
+                                            <hr>
+                                    </div> 
+                                @endif
+                            @endforeach
+
                         @endforeach
                         
                     </div> <!-- -card -->
