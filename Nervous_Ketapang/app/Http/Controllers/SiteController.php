@@ -10,16 +10,18 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\RoleUser;
 use App\Models\Role;
+use App\Models\Post;
 class SiteController extends Controller
 {
     public function index()
     {
+        $post = Post::orderBy('id', 'DESC')->get();
         $user = User::all();
-        $roleUser = DB::table('role_user')->where('role_id', '3')->get();
+        $roleUser = DB::table('role_user')->where('role_id', '2')->get();
         $roles = Role::all();
         $product = Product::orderBy('id', 'DESC')->get();
         $order = Order::orderBy('id', 'DESC')->get();
-        return view('fe-index.index',compact('product', 'order', 'user', 'roleUser', 'roles'));
+        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'roleUser', 'roles'));
     }
     public function order()
     {

@@ -28,7 +28,8 @@
                         <div class="card">
                             <div class="col-lg-t-5">
                                 <div class="card-sales ">
-                                    <form action="./partisi/proses_artikel.php" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('fe-index.post') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -36,13 +37,13 @@
                                                         <span class="input-group-text card-blog" id="inputGroupPrepend2"><img class="rounded-circle" width="40" src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" alt=""></span>
                                                     @endif
                                                 </div>
-                                                <textarea class="form-control " name="isi" placeholder="What's happening ?" maxlength="300" required></textarea>
+                                                <textarea class="form-control " name="post" placeholder="What's happening ?" maxlength="300" required></textarea>
                                             </div>
                                         </div>
                                         <div class="image-upload">
                                             <label for="imgInp" ><i class="fa fa-image"  class="float-left"></i></label>
-                                            <input class="d-none" name="foto" accept="image/*" type='file' id="imgInp" />
-                                            <input class="btn btn-outline-info pd-10-force col-md-2 float-right" type="submit" value="Post"> 
+                                            <input class="d-none" name="cover_img" accept="image/*" type='file' id="imgInp" />
+                                            <input class="btn btn-outline-info pd-10-force col-md-2 float-right mb-3" type="submit" value="Post"> 
                                             <img class="image img-fluid mb-3" id="blah" src="#" alt="" />
                                         </div>
                                     </form>
@@ -58,24 +59,37 @@
                             <div class="row no-gutters">
                                 <div class="card-sales">
                                     <div class="post-grub" >
+
+                                        @foreach ($post as $item)
+                                            
                                         <div class="post-item">
-                                            <img class="rounded-circle img-thumbnail" width="40" src="" alt="">
-                                                <span class="text-white"></span>
+                                            <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                <span class="text-white">{{ $item->user->name }}</span>
                                                 <!-- <i class="fa fa-angle-down"></i> -->
-                                    
-                                                 <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                                <p class="post-title mt-2">asd</p>
-                                                <img class="mb-0 img-fluid center-block"  src="" alt=""> 
+                                                @foreach ($roleUser as $rol)
+                            
+                                                    @if ($item->user->id == $rol->user_id)
+
+                                                    <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                                    
+                                                    @endif
+                    
+                                            @endforeach
+                                                <p class="post-title mt-2">{{ $item->post }}</p>
+                                                <img class="mb-0 img-fluid center-block"  src="{{ asset('storage/post/'. $item->cover_img) }}" alt=""> 
                                                 <!-- <div class="blog blog-title h4 tx-white ">Blog header</div> -->
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="https://www.instagram.com//">Business</a>
-                                                <span class="text-muted ml-1"></span>
+                                                <a href="https://www.instagram.com/bimaarf_">Business</a>
+                                                <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>
                                                 <hr>
                                         </div><!-- post-item -->
+
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>

@@ -3,9 +3,11 @@
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,8 @@ Route::get('/order/{slug}', [OrderController::class, 'formTambah'])->name('fe-or
 Route::post('/order-tambah{id}', [OrderController::class, 'tambah'])->name('fe-order.tambah')->middleware(['auth', 'role:user']);
 Route::get('/delete/order/{id}', [OrderController::class, 'hapus'])->name('fe-order.hapus')->middleware(['auth', 'role:user']);
 
+// Post
+Route::post('/post', [PostController::class, 'post'])->name('fe-index.post')->middleware(['auth', 'role:user|admin|owner']);
 
 // form product
 Route::get('/tambah-produk', [ProductController::class, 'formTambah'])->name('fe-product.form_tambah_product')->middleware(['auth', 'role:admin|owner']);

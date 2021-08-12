@@ -88,6 +88,7 @@
 			<script src="{{asset('frontend/assets/bootstrap_slim/lib/bootstrap/js/bootstrap.js')}}"></script>
 			<script src="{{asset('frontend/assets/bootstrap_slim/js/slim.js')}}"></script>
 			<script src="{{asset('frontend/assets/bootstrap_slim/js/rupiah.js')}}"></script>
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 			<script>
 				$(function(){
 				
@@ -106,7 +107,15 @@
 				});
 				});
 			</script>
-			
+			{{-- post img inp --}}
+			<script>
+				imgInp.onchange = evt => {
+	  const [file] = imgInp.files
+	  if (file) {
+		blah.src = URL.createObjectURL(file)
+	  }
+	}
+			</script>
 			
 
 	</body>
