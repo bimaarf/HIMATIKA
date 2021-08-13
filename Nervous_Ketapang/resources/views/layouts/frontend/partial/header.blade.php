@@ -3,10 +3,15 @@
         <div class="slim-header-left">
           <h2 class="slim-logo"><a href="{{ route('fe-index.index') }}">Nerv<span>ous</span></a></h2>
 
-          <div class="search-box">
-            <input type="text" class="form-control" placeholder="Search">
-            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-          </div><!-- search-box -->
+          <form action="{{ route('fe-index.index') }}" >
+
+            <div class="search-box">
+              
+              <input type="text" name="search" class="form-control" placeholder="Search ">
+              <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+              
+            </div><!-- search-box -->
+          </form>
         </div><!-- slim-header-left -->
         @if(Auth::check())
         <div class="slim-header-right" style="z-index:2;">

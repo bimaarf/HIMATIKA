@@ -13,15 +13,25 @@ use App\Models\Role;
 use App\Models\Post;
 class SiteController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $post = Post::orderBy('id', 'DESC')->get();
-        $user = User::all();
+        if($request->has('search')){
+            $post = Post::where('post', 'LIKE', '%'.$request->search. '%')->get();
+            $user = User::where('name', 'LIKE', '%'.$request->search. '%')->get();
+
+            // $post = Post::where('isi', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
+        }else{
+            $post = Post::orderBy('id', 'DESC')->get();
+            $user = User::all();
+        }
+        
+        
+        $userSide = User::limit(4)->orderBy('id', 'DESC')->get();
         $roleUser = DB::table('role_user')->where('role_id', '2')->get();
         $roles = Role::all();
         $product = Product::orderBy('id', 'DESC')->get();
         $order = Order::orderBy('id', 'DESC')->get();
-        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'roleUser', 'roles'));
+        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'userSide', 'roleUser', 'roles'));
     }
     public function order()
     {

@@ -123,7 +123,7 @@
                                     @if (Auth::user()->hasRole('owner|admin'))
 
                                         <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                        
+
                                     @endif
                                     <span class="tx-12 ml-4 float-right text-secondary"><b>Logout</b></span>
                                         <hr>
@@ -134,7 +134,7 @@
                         <div class="col-8 float-left mb-3"><span>Suggestions For You</span><span class="tx-12 float-right">See All</span></div>
                         @foreach ($roleUser as $rol)
                             
-                            @foreach ($user as $item)
+                            @foreach ($userSide as $item)
                                 @if ($item->id == $rol->user_id)
                                     <div class="col-8 fa-pull-left">
                                         <a href="https://instagram.com/{{ $item->name }}" target="_blank">
