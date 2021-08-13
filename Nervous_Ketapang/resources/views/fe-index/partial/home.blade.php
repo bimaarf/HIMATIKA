@@ -74,6 +74,14 @@
                                                     
                                                     @endif
                                                 @endforeach
+                                                @foreach ($owner as $rol)
+                            
+                                                    @if ($item->user->id == $rol->user_id)
+                                                    <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                                    <span class="text-warning">[Owner]</span>
+                                                    
+                                                    @endif
+                                                @endforeach
                                             @if (Auth::check())
                                                 
                                                 @if ($item->user_id == Auth::user()->id)
@@ -132,7 +140,26 @@
 
 
                         <div class="col-8 float-left mb-3"><span>Suggestions For You</span><span class="tx-12 float-right">See All</span></div>
+                        {{-- Show Owner --}}
+                        @foreach ($owner as $rol)
+                            @foreach ($user as $item)
+                                @if ($item->id == $rol->user_id)
+                                    <div class="col-8 fa-pull-left">
+                                        <a href="https://instagram.com/{{ $item->name }}" target="_blank">
+                                            <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
+                                            <span class="text-white">{{ $item->name }}</span>
+                                            <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                            <span class="text-warning">[Owner]</span>
+                                            <span class="tx-12 fa-pull-right text-secondary"><i class="fa fa-instagram"></i> <b>Dev-K</b></span>
+                                        </a> 
+                                            <hr>
+                                    </div> 
+                                @endif
+                            @endforeach
+                        @endforeach
+                        {{-- Show Seller --}}
                         @foreach ($roleUser as $rol)
+                            
                             
                             @foreach ($userSide as $item)
                                 @if ($item->id == $rol->user_id)

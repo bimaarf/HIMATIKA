@@ -26,10 +26,11 @@ class SiteController extends Controller
         
         $userSide = User::limit(4)->orderBy('id', 'DESC')->get();
         $roleUser = DB::table('role_user')->where('role_id', '2')->get();
+        $owner = DB::table('role_user')->where('role_id', '1')->get();
         $roles = Role::all();
         $product = Product::orderBy('id', 'DESC')->get();
         $order = Order::orderBy('id', 'DESC')->get();
-        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'userSide', 'roleUser', 'roles'));
+        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'userSide', 'roleUser', 'owner', 'roles'));
     }
     public function order()
     {
