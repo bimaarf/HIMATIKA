@@ -48,7 +48,7 @@
                                         </div>
                                     </form>
                                     <div class="d-flex mb-3 mt-4 float-left">
-                                        <a href="https://www.instagram.com/">Business</a>
+                                        <a href="https://www.instagram.com/bimaarf_">Business</a>
                                         <span class="text-muted ml-1">BuTe.ID</span>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="https://www.instagram.com/bimaarf_">Business</a>
+                                                <a href="https://www.instagram.com/bimaarf_" target="_blank">Business</a>
                                                 <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>
@@ -120,8 +120,12 @@
                                 
                                     <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" alt="">
                                     <span class="text-white">{{ Auth::user()->name }}</span>
-                                    <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                    <span class="tx-12 ml-4 float-right"><b>Switch</b></span>
+                                    @if (Auth::user()->hasRole('owner|admin'))
+
+                                        <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                        
+                                    @endif
+                                    <span class="tx-12 ml-4 float-right text-secondary"><b>Logout</b></span>
                                         <hr>
                                 </a>
                             @endif
@@ -133,11 +137,11 @@
                             @foreach ($user as $item)
                                 @if ($item->id == $rol->user_id)
                                     <div class="col-8 fa-pull-left">
-                                        <a href="https://instagram.com/">
+                                        <a href="https://instagram.com/{{ $item->name }}" target="_blank">
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
                                             <span class="text-white">{{ $item->name }}</span>
                                             <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                            <span class="tx-12 fa-pull-right"> <b>Visit  </b></span>
+                                            <span class="tx-12 fa-pull-right text-secondary"><i class="fa fa-instagram"></i> <b>Seller  </b></span>
                                         </a> 
                                             <hr>
                                     </div> 

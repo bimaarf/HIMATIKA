@@ -28,7 +28,7 @@
 
         <p class="t-window pos-absolute b-60 l-30 span-color" style="text-align: left;" >{{ $pd->title }}<br><span class="span-c ">RP {{ $pd->harga_akhir }}</span> <s>RP {{ $pd->harga_awal }}</s> </p>
         
-        <div class="bute pos-absolute b-0 l-0 r-0"><a href="#" class="btn btn-outline-info pd-10-force col-md-8" style="margin:10px;">Pesan sekarang</a></div>
+        <div class="bute pos-absolute b-0 l-0 r-0"><a href="#" class="btn btn-outline-info pd-10-force col-md-8" style="margin:10px;">Order now</a></div>
         </li>
         @endforeach
         </ul>
