@@ -7,7 +7,7 @@
   </div><!-- slim-pageheader -->
   
   <div class="section-wrapper">
-      <div class="card bd-0">
+      <div class="card bd-0"> <small class="text-warning"><i>*Follow and DM &nbsp;<a href="https://instagram.com/bimaarf_" target="_blank"> <i class="fa fa-instagram"></i> bimaarf_</a>&nbsp;to activate the selling product feature and a verified account.</i></small>
         <a href="{{ route('fe-product.form_tambah_product') }}" class="btn btn-outline-info pd-10-force col-md-12 nangkak">Add Product</a>
         <div class="blog-header img-gallery-product">
             

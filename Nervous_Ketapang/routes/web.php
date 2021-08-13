@@ -37,6 +37,7 @@ Route::get('/delete/order/{id}', [OrderController::class, 'hapus'])->name('fe-or
 
 // Post
 Route::post('/post', [PostController::class, 'post'])->name('fe-index.post')->middleware(['auth', 'role:user|admin|owner']);
+Route::get('/delete/post/{id}', [PostController::class, 'hapus'])->name('fe-index.post.hapus')->middleware(['auth', 'role:user|admin|owner']);
 
 // form product
 Route::get('/tambah-produk', [ProductController::class, 'formTambah'])->name('fe-product.form_tambah_product')->middleware(['auth', 'role:admin|owner']);

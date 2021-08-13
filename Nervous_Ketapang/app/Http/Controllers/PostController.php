@@ -47,4 +47,12 @@ class PostController extends Controller
         }
 
     }
+
+    public function hapus($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        Session::flash('sukses','Post deleted successfully');
+        return redirect()->route('fe-index.index');
+    }
 }

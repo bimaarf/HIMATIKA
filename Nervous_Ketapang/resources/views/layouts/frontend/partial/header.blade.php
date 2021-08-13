@@ -97,13 +97,13 @@
               <span>Result</span>
             </a>
           </li>
-          @endif
           <li class="nav-item">
             <a class="nav-link" href="#profile" data-toggle="tab">
               <i class="icon ion-grid"></i>
               <span></span>
             </a>
           </li>
+          @endif
         </ul>
       </div><!-- container -->
     </div><!-- slim-navbar -->

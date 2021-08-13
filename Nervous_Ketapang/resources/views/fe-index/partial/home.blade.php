@@ -60,7 +60,7 @@
                                 <div class="card-sales">
                                     <div class="post-grub" >
 
-                                        @foreach ($post as $item)
+                                    @foreach ($post as $item)
                                             
                                         <div class="post-item">
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
@@ -73,8 +73,16 @@
                                                     <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
                                                     
                                                     @endif
-                    
-                                            @endforeach
+                                                @endforeach
+                                            @if (Auth::check())
+                                                
+                                                @if ($item->user_id == Auth::user()->id)
+                                                
+                                                <a href="{{ route('fe-index.post.hapus', ['id'=>$item->id]) }}"><i class="fa fa-trash text-danger pull-right"></i></a>
+
+                                                @endif
+                                            @endif
+                                            
                                                 <p class="post-title mt-2">{{ $item->post }}</p>
                                                 <img class="mb-0 img-fluid center-block"  src="{{ asset('storage/post/'. $item->cover_img) }}" alt=""> 
                                                 <!-- <div class="blog blog-title h4 tx-white ">Blog header</div> -->
@@ -88,7 +96,7 @@
                                                 <hr>
                                         </div><!-- post-item -->
 
-                                        @endforeach
+                                    @endforeach
 
                                     </div>
                                 </div>
