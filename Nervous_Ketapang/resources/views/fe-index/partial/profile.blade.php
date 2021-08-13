@@ -10,7 +10,20 @@
         		    <div class="tx-center">
         		      <a href="#"><img src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" class="card-img" alt="profil"></a>
         		      <h5 class="mg-t-10 mg-b-5"><a href="#" class="contact-name" style=" text-transform: capitalize;">{{ Auth::user()->name }}</a></h5>
-        		      <p style=" text-transform: capitalize;">User</p>
+						@if (Auth::user()->hasRole('user'))
+						
+						<p style=" text-transform: capitalize;">User</p>
+						@endif
+						@if (Auth::user()->hasRole('admin'))
+						
+						<p style=" text-transform: capitalize;" class="text-success">Seller</p>
+						@endif
+						@if (Auth::user()->hasRole('owner'))
+						
+						<p style=" text-transform: capitalize;" class="text-warning">Owner</p>
+						@endif
+
+
         		      <p class="contact-social">
         		        <a href=""><i class="fa fa-facebook"></i></a>
         		        <a href=""><i class="fa fa-twitter"></i></a>
@@ -19,8 +32,8 @@
         		    </div><!-- tx-center -->
 
         		    <p class="contact-item">
-        		      <span>ID :</span>
-        		      <span>{{ Auth::user()->id }}</span>
+        		      <span>Username :</span>
+        		      <span>{{ Auth::user()->name }}</span>
         		    </p><!-- contact-item -->
         		    <p class="contact-item">
         		      <span>Email : </span>
@@ -31,7 +44,7 @@
         		      <a href="#">change password</a>
         		    </p><!-- contact-item -->
         		    <p class="contact-item">
-        		      <span>Tambah pengguna :</span>
-        		      <a href="tambah-pengguna.php">Register</a>
+        		      <span>Add User :</span>
+        		      <a href="{{ route('register') }}">Register</a>
         		    </p><!-- contact-item -->
         		</div><!-- card -->

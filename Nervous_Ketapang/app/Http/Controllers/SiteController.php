@@ -17,14 +17,12 @@ class SiteController extends Controller
     {
         if($request->has('search')){
             $post = Post::where('post', 'LIKE', '%'.$request->search. '%')->get();
-            $user = User::where('name', 'LIKE', '%'.$request->search. '%')->get();
 
-            // $post = Post::where('isi', 'LIKE', '%'.$request->search. '%')->simplePaginate(10);
         }else{
             $post = Post::orderBy('id', 'DESC')->get();
-            $user = User::all();
         }
         
+        $user = User::all();
         
         $userSide = User::limit(4)->orderBy('id', 'DESC')->get();
         $roleUser = DB::table('role_user')->where('role_id', '2')->get();

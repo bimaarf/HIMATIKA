@@ -16,7 +16,7 @@
           <li class="card bd-1" style="padding-top:10px; margin:10px">
             {{-- window --}}
             
-          <a href="{{ route('fe-order.form_tambah_order', ['slug'=>$pd->slug]) }}"><img class="" src="{{ asset('storage/produk/'. $pd->cover_img )}}"></a>
+          <a href="{{ route('fe-order.form_tambah_order', ['slug'=>$pd->slug]) }}" target="_blank" ><img class="" src="{{ asset('storage/produk/'. $pd->cover_img )}}"></a>
         
         <div class="space"></div>
         
@@ -28,7 +28,7 @@
 
         <p class="t-window pos-absolute b-60 l-30 span-color" style="text-align: left;" >{{ $pd->title }}<br><span class="span-c ">RP {{ $pd->harga_akhir }}</span> <s>RP {{ $pd->harga_awal }}</s> </p>
         
-        <div class="bute pos-absolute b-0 l-0 r-0"><a href="#" class="btn btn-outline-info pd-10-force col-md-8" style="margin:10px;">Order now</a></div>
+        <div class="bute pos-absolute b-0 l-0 r-0"><a href="{{ route('fe-order.form_tambah_order', ['slug'=>$pd->slug]) }}" target="_blank" class="btn btn-outline-info pd-10-force col-md-8" style="margin:10px;">Order now</a></div>
         </li>
         @endforeach
         </ul>
