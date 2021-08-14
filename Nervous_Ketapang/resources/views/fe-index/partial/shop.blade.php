@@ -1,6 +1,6 @@
 <div class="slim-pageheader">
   <ol class="breadcrumb slim-breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Nervous</a></li>
+    <li class="breadcrumb-item"><a href="#">Toko</a></li>
     <li class="breadcrumb-item active" aria-current="page">Shop</li>
   </ol>
   <h6 class="slim-pagetitle">Shop</h6>
@@ -20,9 +20,9 @@
         
         <div class="space"></div>
         
-        <p class="t-window pos-absolute t-25 l-40 span-color text-dark" style="text-align: left; font-weight:bold;" ><i class="icon fa fa-shopping-cart mr-1" aria-hidden="true"></i>Nervous</p>
+        <p class="t-window pos-absolute t-25 l-40 span-color text-dark" style="text-align: left; font-weight:bold;" ><i class="icon fa fa-shopping-cart mr-1" aria-hidden="true"></i>{{$pd->user->name}}</p>
 
-        <p class="t-mobile pos-absolute t-20 l-10 span-color text-dark" style="text-align: left; font-weight:bold;" ><i class="icon fa fa-shopping-cart mr-1" aria-hidden="true"></i>Nervous</p>
+        <p class="t-mobile pos-absolute t-20 l-10 span-color text-dark" style="text-align: left; font-weight:bold;" ><i class="icon fa fa-shopping-cart mr-1" aria-hidden="true"></i>{{$pd->user->name}}</p>
 
         <p class="t-mobile pos-absolute b-5 l-10 span-color" style="text-align: left;" >{{ $pd->title }}<br><span class="span-c ">RP {{ $pd->harga_akhir }}</span> <s>RP {{ $pd->harga_awal }}</s> </p>
 

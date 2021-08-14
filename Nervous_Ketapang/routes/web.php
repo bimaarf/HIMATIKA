@@ -42,8 +42,8 @@ Route::get('/delete/post/{id}', [PostController::class, 'hapus'])->name('fe-inde
 // form product
 Route::get('/tambah-produk', [ProductController::class, 'formTambah'])->name('fe-product.form_tambah_product')->middleware(['auth', 'role:admin|owner']);
 Route::post('/produk-tambah', [ProductController::class, 'tambah'])->name('fe-product.tambah')->middleware(['auth', 'role:admin|owner']);
-Route::get('/{slug}', [ProductController::class, 'formUbah'])->name('fe-product.form_ubah_product')->middleware(['auth', 'role:admin|owner']);
-Route::post('/produk-edit/{slug}', [ProductController::class, 'ubah'])->name('fe-product.ubah')->middleware(['auth', 'role:admin|owner']);
-Route::get('/delete/product/{id}', [ProductController::class, 'hapus'])->name('fe-product.hapus')->middleware(['auth', 'role:owner']);
+Route::get('/{slug}', [ProductController::class, 'formUbah'])->name('fe-product.form_ubah_product')->middleware(['auth', 'role:owner']);
+Route::post('/produk-edit/{slug}', [ProductController::class, 'ubah'])->name('fe-product.ubah')->middleware(['auth', 'role:owner']);
+Route::get('/delete/product/{id}', [ProductController::class, 'hapus'])->name('fe-product.hapus')->middleware(['auth', 'role:admin|owner']);
 
 // form order

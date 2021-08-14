@@ -1,9 +1,9 @@
 <div class="slim-pageheader">
 				<ol class="breadcrumb slim-breadcrumb">
-					<li class="breadcrumb-item"><a href="#">BuTe.ID</a></li>
-					<li class="breadcrumb-item active" aria-current="page">PROFILE</li>
+					<li class="breadcrumb-item"><a href="#">Toko</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Profile</li>
 				</ol>
-				<h6 class="slim-pagetitle">PROFILE</h6>
+				<h6 class="slim-pagetitle">Profile</h6>
 				</div><!-- slim-pageheader -->
 
 				<div class="card-contact mg-b-20">

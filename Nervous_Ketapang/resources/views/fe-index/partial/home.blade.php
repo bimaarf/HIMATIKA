@@ -1,6 +1,6 @@
 <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Nervous</a></li>
+        <li class="breadcrumb-item"><a href="#">Toko</a></li>
         <li class="breadcrumb-item active" aria-current="page">Home</li>
     </ol>
     <h6 class="slim-pagetitle">Home</h6>
@@ -41,15 +41,22 @@
                                             </div>
                                         </div>
                                         <div class="image-upload">
+                                        @if (Auth::check())
+                                            @if (Auth::user()->hasRole('owner|admin'))
+                                                
                                             <label for="imgInp" ><i class="fa fa-image"  class="float-left"></i></label>
                                             <input class="d-none" name="cover_img" accept="image/*" type='file' id="imgInp" />
+                                            @endif
+
+                                        @endif
+
                                             <input class="btn btn-outline-info pd-10-force col-md-2 float-right mb-3" type="submit" value="Post"> 
                                             <img class="image img-fluid mb-3" id="blah" src="#" alt="" />
                                         </div>
                                     </form>
                                     <div class="d-flex mb-3 mt-4 float-left">
                                         <a href="https://www.instagram.com/bimaarf_">Business</a>
-                                        <span class="text-muted ml-1">BuTe.ID</span>
+                                        <span class="text-muted ml-1">Toko</span>
                                     </div>
                                 </div>
                             </div>

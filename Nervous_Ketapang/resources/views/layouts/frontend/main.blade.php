@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device=width,initial-scale=1">
-		<title>Dashboard User</title>
-		<link href="https://i.ibb.co/kQ6x5MY/LOGO.png" rel="shortcut icon">
+		<meta name="keywords" content="coretanmahasiswa,toko coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa,artikel,blog,berita,mahasiswa,coretan">
+    	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
+		<title>Toko | Coretan Mahasiswa</title>
+		<link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
 		<!-- Vendor css -->
 		<link href="{{asset('frontend/assets/bootstrap_slim/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 		<link href="{{asset('frontend/assets/bootstrap_slim/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
@@ -55,10 +57,9 @@
 		</style>
 	</head>
 	<body class="slim-sticky-header scrollbar scrollbar-near-moon thin">
-
 		@include('layouts.frontend.partial.header')
-
-			<div class="container">
+		
+		<div class="container">
 				
 				@yield('content')
 			</div>

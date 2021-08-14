@@ -5,7 +5,7 @@
 @enderror
 	<div class="slim-pageheader">
 	<ol class="breadcrumb slim-breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Nervous</a></li>
+		<li class="breadcrumb-item"><a href="#">Toko</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Product</li>
   	</ol>
   <h6 class="slim-pagetitle">Add</h6>

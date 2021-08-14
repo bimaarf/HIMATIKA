@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device=width,initial-scale=1">
-    <title>Dashboard User</title>
+    <title>Product | CM</title>
     <link href="https://i.ibb.co/kQ6x5MY/LOGO.png" rel="shortcut icon">
     <!-- Vendor css -->
     <link href="{{asset('frontend/assets/bootstrap_slim/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">

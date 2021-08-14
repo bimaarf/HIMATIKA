@@ -2,7 +2,7 @@
 
 <div  id="refresh" class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
-        <li class="breadcrumb-item"><a href="#">BuTe.ID</a></li>
+        <li class="breadcrumb-item"><a href="#">Toko</a></li>
         <li class="breadcrumb-item active" aria-current="page">Result</li>
     </ol>
     <h6 class="slim-pagetitle">Result</h6>
@@ -162,6 +162,7 @@
                         </tr>
                     </div>
                 </table>
+                <small class="text-danger"><i>*contact seller to confirm</i></small>
                 <div class="p-2 bd-highlight">
                     <a href="#modaldeleted{{ $ord->id }}" class="btn-sm btn btn-danger"  data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash"></i> Return</a>
                     <a href="https://wa.me/{{ $ord->product->telp }}" class="btn-sm btn btn-success" > <i class="fa fa-whatsapp"></i> Chat</a>
