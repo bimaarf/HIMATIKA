@@ -47,7 +47,7 @@
         <div class="slim-header-right  @if(Auth::check()) d-none @endif" style="z-index:2;">
           <div class="dropdown dropdown-a">
             <a href="" class="header-notification" data-toggle="dropdown">
-              <i class="icon ion-ios-bolt-outline"></i>
+              <i class="fa fa-user mr-1"></i><i class="fa fa-angle-down"></i>
             </a>
             <div class="dropdown-menu" >
               <div class="dropdown-menu-header">
