@@ -12,7 +12,6 @@
         <div class="row row-xs mg-b-10">
           
             <div class="col-sm">
-                <small class="text-danger"><i>*Untuk seller disarankan menggunakan username IG agar langsung ke Direct ke IG anda</i></small>
                 <input name="name" type="text" class="form-control" placeholder="username" required autofocus>
             </div>
         </div><!-- row -->
@@ -37,23 +36,23 @@
         <button type="submit" name="register" class="btn btn-primary btn-block btn-signin">SIGN UP</button>
         </form>
         <div class="signup-separator"><span>or</span></div>
-
+{{-- 
         <button class="btn btn-facebook btn-block">register with facebook</button>
-        <button class="btn btn-twitter btn-block">register with Twitter</button>
+        <button class="btn btn-twitter btn-block">register with Twitter</button> --}}
 
-        <p class="mg-t-40 mg-b-0">already have an account? <a href="../login/index.php">SignIn</a></p>
+        <p class="mg-t-40 mg-b-0">already have an account? <a href="{{ route('login') }}">SignIn</a></p>
       </div><!-- signin-box -->
 
     </div><!-- signin-right -->
     <div class="signin-left">
       <div class="signin-box">
-        <h2 class="slim-logo"><a href="index.html">Evo.it<span> | CoMa</span></a></h2>
+        <h2 class="slim-logo"><a href="index.html">Evo.it<span> | Toko</span></a></h2>
 
-        <p>CoMa is a platform to help students promote their business.</p>
+        <p>Toko is a platform to help students promote their business.</p>
 
         <p><a href="#" class="btn btn-outline-secondary pd-x-25">Demo</a></p>
 
-        <p class="tx-12">&copy; Copyright 2020. All Rights Reserved.</p>
+        <p class="tx-12">&copy; Copyright 2021. All Rights Reserved.</p>
       </div>
     </div><!-- signin-left -->
   </div><!-- d-flex -->

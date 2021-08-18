@@ -3,7 +3,7 @@
       <div class="slim-header-left">
         <h2 class="slim-logo"><a href="{{ route('fe-index.index') }}">To<span>Ko</span></a></h2>
 
-        <form action="{{ route('fe-index.index') }}" >
+        <form action="{{ route('fe-toko.index',['name'=>$user->name]) }}" >
 
           <div class="search-box">
             
@@ -16,7 +16,7 @@
       @if(Auth::check())
       <div class="slim-header-right" style="z-index:2;">
         
-        <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
+        <a href="{{ route('fe-index.index') }}" class="header-notification" ><i class="fa fa-home"></i></a>
         <div class="dropdown dropdown-a">
           <a href="#" class="header-notification" data-toggle="dropdown">
             <i class="fa fa-user mr-1"></i><i class="fa fa-angle-down"></i>
@@ -47,8 +47,8 @@
       @endif
 
       <div class="slim-header-right  @if(Auth::check()) d-none @endif" style="z-index:2;">
+        <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
         <div class="dropdown dropdown-a">
-          <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
           <a href="" class="header-notification" data-toggle="dropdown">
             <i class="fa fa-user mr-1"></i><i class="fa fa-angle-down"></i>
           </a>

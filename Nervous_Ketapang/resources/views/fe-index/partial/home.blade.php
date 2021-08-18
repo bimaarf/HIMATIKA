@@ -70,8 +70,11 @@
                                     @foreach ($post as $item)
                                             
                                         <div class="post-item">
-                                            <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                            <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">
+
+                                                <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
                                                 <span class="text-white">{{ $item->user->name }}</span>
+                                            </a>
                                                 <!-- <i class="fa fa-angle-down"></i> -->
                                                 @foreach ($roleUser as $rol)
                             
@@ -104,7 +107,7 @@
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="https://www.instagram.com/{{ $item->user->name }}" target="_blank">Business</a>
+                                                <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}" target="_blank">Business</a>
                                                 <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>
@@ -171,11 +174,11 @@
                             @foreach ($userSide as $item)
                                 @if ($item->id == $rol->user_id)
                                     <div class="col-8 fa-pull-left">
-                                        <a href="https://instagram.com/{{ $item->name }}" target="_blank">
+                                        <a href="{{ route('fe-toko.index', ['name'=>$item->name]) }}" target="_blank">
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
                                             <span class="text-white">{{ $item->name }}</span>
                                             <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
-                                            <span class="tx-12 fa-pull-right text-secondary"><i class="fa fa-instagram"></i> <b>Seller  </b></span>
+                                            <span class="tx-12 fa-pull-right text-secondary"><i class="icon ion-ios-people"></i> <b>Seller  </b></span>
                                         </a> 
                                             <hr>
                                     </div> 
