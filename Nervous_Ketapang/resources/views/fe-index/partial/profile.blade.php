@@ -9,17 +9,17 @@
 				<div class="card-contact mg-b-20">
         		    <div class="tx-center">
         		      <a href="#"><img src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" class="card-img" alt="profil"></a>
-        		      <h5 class="mg-t-10 mg-b-5"><a href="#" class="contact-name" style=" text-transform: capitalize;">{{ Auth::user()->name }}</a></h5>
+        		      <h5 class="mg-t-10 mg-b-5"><a href="#" class="contact-name text-lowercase" style=" text-transform: capitalize;">{{ Auth::user()->name }}</a></h5>
 						@if (Auth::user()->hasRole('user'))
 						<p style=" text-transform: capitalize;">User</p>
 						@endif
 						@if (Auth::user()->hasRole('admin'))
 						<p style=" text-transform: capitalize;" class="text-success">Seller</p>
 						
-						@else (Auth::user()->hasRole('owner'))
+						@endif
+						@if (Auth::user()->hasRole('owner'))
 						<p style=" text-transform: capitalize;" class="text-warning">Owner</p>
 						@endif
-
         		      <p class="contact-social">
         		        <a href=""><i class="fa fa-facebook"></i></a>
         		        <a href=""><i class="fa fa-twitter"></i></a>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device=width,initial-scale=1">
     <title>@yield('title')</title>
 	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
-    <link href="https://i.ibb.co/kQ6x5MY/LOGO.png" rel="shortcut icon">
+    <link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
     <!-- Vendor css -->
     <link href="{{asset('frontend/assets/bootstrap_slim/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/assets/bootstrap_slim/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">

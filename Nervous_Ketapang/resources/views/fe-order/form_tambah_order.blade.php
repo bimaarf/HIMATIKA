@@ -17,24 +17,24 @@
 					<div class="col-lg-7 table-responsive text-justify pull-left mt-2"> 
 						<table class=" mg-b-0 tx-12 ">
 							<tr align=left valign=top>
-								<td class="col-4">Product Name</td>
-								<td class="col-4">:</td>
-								<td class="col-4">{{ $product->title }}</td>
-							</tr>
-							<tr align=left valign=top>
-								<td class="col-4 ">Description</td>
-								<td class="col-4">:</td>
-								<td class="col-4 ">{{ $product->deskripsi }}</td>
-							</tr>
-							<tr align=left valign=top>
-								<td class="col-2">Price</td>
+								<td class="col-1">Product Name</td>
 								<td class="col-1">:</td>
-								<td class="col-2" name="price" >Rp {{ $product->harga_akhir }}</td>
+								<td class="col-5">{{ $product->title }}</td>
 							</tr>
 							<tr align=left valign=top>
-								<td class="col-2">Stock</td>
+								<td class="col-1 ">Description</td>
 								<td class="col-1">:</td>
-								<td class="col-2" name="price" >{{ $product->stok }}</td>
+								<td class="col-5 tx-w-space">{{ $product->deskripsi }}</td>
+							</tr>
+							<tr align=left valign=top>
+								<td class="col-1">Price</td>
+								<td class="col-1">:</td>
+								<td class="col-5" name="price" >Rp {{ $product->harga_akhir }}</td>
+							</tr>
+							<tr align=left valign=top>
+								<td class="col-1">Stock</td>
+								<td class="col-1">:</td>
+								<td class="col-5" name="price" >{{ $product->stok }}</td>
 							</tr>
 						</table>
 				</div>

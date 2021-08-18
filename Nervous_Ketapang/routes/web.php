@@ -4,6 +4,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Order;
@@ -23,6 +24,17 @@ use App\Models\Post;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/foo', function () {
+    Artisan::call('vendor:publish --tag=laratrust-assets --force');
+});
+
+Route::get('/clear-cache', function() {
+    $output = [];
+    \Artisan::call('cache:clear', $output);
+    dd($output);
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,6 +46,9 @@ Route::get('/', [SiteController::class, 'index'])->name('fe-index.index');
 Route::get('/order/{slug}', [OrderController::class, 'formTambah'])->name('fe-order.form_tambah_order')->middleware(['auth', 'role:user']);
 Route::post('/order-tambah{id}', [OrderController::class, 'tambah'])->name('fe-order.tambah')->middleware(['auth', 'role:user']);
 Route::get('/delete/order/{id}', [OrderController::class, 'hapus'])->name('fe-order.hapus')->middleware(['auth', 'role:user']);
+
+// toko
+Route::get('/{name}', [TokoController::class, 'index'])->name('fe-toko.index');
 
 // Post
 Route::post('/post', [PostController::class, 'post'])->name('fe-index.post')->middleware(['auth', 'role:user|admin|owner']);

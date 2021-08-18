@@ -37,7 +37,7 @@
                                                         <span class="input-group-text card-blog" id="inputGroupPrepend2"><img class="rounded-circle" width="40" src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" alt=""></span>
                                                     @endif
                                                 </div>
-                                                <textarea class="form-control " name="post" placeholder="What's happening ?" maxlength="300" required></textarea>
+                                                <textarea class="form-control " onkeyup="textKomen()" name="post" placeholder="What's happening ?" maxlength="300" required></textarea>
                                             </div>
                                         </div>
                                         <div class="image-upload">
@@ -104,7 +104,7 @@
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="https://www.instagram.com/bimaarf_" target="_blank">Business</a>
+                                                <a href="https://www.instagram.com/{{ $item->user->name }}" target="_blank">Business</a>
                                                 <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>

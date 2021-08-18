@@ -15,6 +15,7 @@
       </div><!-- slim-header-left -->
       @if(Auth::check())
       <div class="slim-header-right" style="z-index:2;">
+        
         <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
         <div class="dropdown dropdown-a">
           <a href="#" class="header-notification" data-toggle="dropdown">
@@ -46,10 +47,10 @@
       @endif
 
       <div class="slim-header-right  @if(Auth::check()) d-none @endif" style="z-index:2;">
-        <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
         <div class="dropdown dropdown-a">
+          <a href="{{ route('fe-index.index') }}" class="header-notification"><i class="fa fa-home"></i></a>
           <a href="" class="header-notification" data-toggle="dropdown">
-            <i class="icon ion-ios-bolt-outline"></i>
+            <i class="fa fa-user mr-1"></i><i class="fa fa-angle-down"></i>
           </a>
           <div class="dropdown-menu" >
             <div class="dropdown-menu-header">
@@ -67,21 +68,19 @@
           </div><!-- dropdown-menu-right -->
         </div><!-- dropdown -->
       </div><!-- dropdown -->
-      
-      
-     
 
       </div><!-- header-right -->
     </div><!-- container -->
-  <!-- navbar -->
-<div class="slim-navbar" style="z-index:1;">
+  </div><!-- slim-header -->
+
+  <div class="slim-navbar" style="z-index:1;">
     <div class="container">
       <ul class="nav">
 
         <li class="nav-item">
             <a class="nav-link" href="#shop" data-toggle="tab">
-              <i class="icon fa fa-edit" aria-hidden="true"></i>
-              <span>Product</span>
+              <i class="icon ion-ios-people" aria-hidden="true"></i>
+              <span>Profile Info</span>
             </a>
           </li>	
         
@@ -90,7 +89,7 @@
   </div><!-- slim-navbar -->
   @if(Auth::check())
                           <!-- MODAL EFFECTS -->
-                              <div id="modaldemo6" class="modal fade">
+                  <div id="modaldemo6" class="modal fade">
                 <div class="modal-dialog modal-dialog-vertical-center" role="document">
                   <div class="modal-content bd-0 tx-14 rounded">
                     <div class="modal-header pd-y-20 pd-x-25">
@@ -104,11 +103,11 @@
                       <p class="mg-b-5">Are you sure you want to log out? <u>Confirm and log out</u> </p>
                     </div>
                     <div class="modal-footer rounded">
-              <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                      <a href="{{ route('logout') }}"><button type="button" id="btn-delete" class="btn btn-danger rounded" onclick="event.preventDefault(); this.closest('form').submit();"> Confirm </button></a>	        
-                      <button type="button" class="btn btn-secondary rounded" data-dismiss="modal"> No </button>
-              </form>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                                <a href="{{ route('logout') }}"><button type="button" id="btn-delete" class="btn btn-danger rounded" onclick="event.preventDefault(); this.closest('form').submit();"> Confirm </button></a>	        
+                                <button type="button" class="btn btn-secondary rounded" data-dismiss="modal"> No </button>
+                        </form>
                     </div>
                   </div>
                 </div><!-- modal-dialog -->

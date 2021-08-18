@@ -38,7 +38,7 @@
 		
 		<div class="form-group">
 			<label>Description</label>
-			<textarea class="form-control" name="deskripsi">{{ $product->deskripsi }}</textarea>
+			<textarea class="form-control" onkeyup="textKomen()" name="deskripsi">{{ $product->deskripsi }}</textarea>
 		</div>
 		<div class="form-group">
 			<label>Stock</label>
@@ -46,12 +46,16 @@
 		</div>		
 		<div class="form-group">
 			<label>Previous Price</label>
-			<input class="form-control" type="num" name="harga_awal" value="{{ $product->harga_akhir }}"readonly />
+			<input class="form-control" type="num" name="harga_awal" value="{{ $product->harga_akhir }}" readonly />
 		</div>	
 		<div class="form-group">
 			<label>Final Price</label>
 			<input class="form-control" type="num" name="harga_akhir" id="num" required>
 		</div>	
+		<div class="form-group">
+			<label><i class="fa fa-whatsapp text-success"></i> Whatsapp</label> <small class="text-danger"><i>*Enter your whatsapp number for easy transaction</i></small>
+			<input type="number" class="form-control" name="telp" placeholder="6281XXX" maxlength="20" value="{{ $product->telp }}" required>
+		</div>
 		<div class="form-group">
 			<label>Image</label> <small class="text-danger"> <i>*max:1024</i></small>
 			<input class="form-control" type="file" name="cover_img">

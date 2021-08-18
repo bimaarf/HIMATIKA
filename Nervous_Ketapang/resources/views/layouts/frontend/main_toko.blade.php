@@ -62,7 +62,7 @@
 		</style>
 	</head>
 	<body class="slim-sticky-header scrollbar scrollbar-near-moon thin">
-		@include('layouts.frontend.partial.header')
+		@include('layouts.frontend.partial.toko')
 		
 		<div class="container">
 				

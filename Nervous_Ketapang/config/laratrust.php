@@ -279,7 +279,7 @@ return [
         | will be accessible from.
         |
         */
-        'path' => 'bima',
+        'path' => 'owner-management-system',
 
         /*
         |--------------------------------------------------------------------------

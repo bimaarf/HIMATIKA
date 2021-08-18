@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device=width,initial-scale=1">
     <title>Order | CM</title>
 	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
-    <link href="https://i.ibb.co/kQ6x5MY/LOGO.png" rel="shortcut icon">
+    <link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
     <!-- Vendor css -->
     <link href="{{asset('frontend/assets/bootstrap_slim/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/assets/bootstrap_slim/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
@@ -29,7 +29,17 @@
         <link rel="stylesheet" href="https://fontawesome.com/v4.7/icon/user">
         <link rel="stylesheet" href="https://fontawesome.com/v5.15/icons/edit">
 <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
-
+ <!--google ads-->
+ <script data-ad-client="ca-pub-2559852980754958" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <style>
+				.tx-w-space {
+                    white-space: pre-wrap;       /* css-3 */
+                    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                    white-space: -pre-wrap;      /* Opera 4-6 */
+                    white-space: -o-pre-wrap;    /* Opera 7 */
+                    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+                    }
+			</style>
 
   </head>
   <body class="slim-sticky-header scrollbar scrollbar-near-moon thin">

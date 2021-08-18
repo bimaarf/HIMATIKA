@@ -38,7 +38,7 @@
 		
 		<div class="form-group">
 			<label>Description</label>
-			<textarea class="form-control" name="deskripsi" maxlength="255"></textarea>
+			<textarea class="form-control" name="deskripsi" onkeyup="textKomen()"></textarea>
 		</div>
 		<div class="form-group">
 			<label>Stock</label>
