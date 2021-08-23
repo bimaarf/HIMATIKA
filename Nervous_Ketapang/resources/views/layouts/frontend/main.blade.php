@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device=width,initial-scale=1">
 		<meta name="keywords" content="coretanmahasiswa,toko coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa,artikel,blog,berita,mahasiswa,coretan">
     	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
-		<title>Toko | Coretan Mahasiswa</title>
+		<title>Lapakku - Create your own online shop</title>
 		<link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
 		<link rel="icon" href="{{asset('frontend/assets/icon/icon.png')}}" type="image/x-icon">
 		<link rel="icon" href="{{asset('frontend/assets/icon/icon.png')}}" sizes="32x32" />
@@ -34,6 +34,7 @@
 			<link rel="stylesheet" href="{{asset('frontend/assets/bootstrap_slim/css/online.css')}}">
 			<link rel="stylesheet" href="https://fontawesome.com/v4.7/icon/user">
 			<link rel="stylesheet" href="https://fontawesome.com/v5.15/icons/edit">
+			
 	<!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
 
 		<style>
@@ -45,6 +46,22 @@
 			.img-gallery-product img:hover{
 				transition: all 0.2s ease-out 0s;
 				filter: brightness(0.9);
+			}
+			.tx-w-space {
+                    white-space: pre-wrap;       /* css-3 */
+                    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                    white-space: -pre-wrap;      /* Opera 4-6 */
+                    white-space: -o-pre-wrap;    /* Opera 7 */
+                    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+			}
+			textarea::-webkit-scrollbar {
+					width: 3px;
+					background-color: #F5F5F5; }
+
+					textarea::-webkit-scrollbar-thumb {
+					border-radius: 10px;
+					-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+					background-color: #1b84e7; 
 			}
 			@media screen and (max-width:500px) {
 				

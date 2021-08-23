@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device=width,initial-scale=1">
 		<meta name="keywords" content="coretanmahasiswa,toko coretanmahasiswa,coretan mahasiswa,CoretanMahasiswa,Coretan Mahasiswa,artikel,blog,berita,mahasiswa,coretan">
     	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
-		<title>Toko | Coretan Mahasiswa</title>
+		<title>Lapakku - Create your own online shop</title>
 		<link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
 		<link rel="icon" href="{{asset('frontend/assets/icon/icon.png')}}" type="image/x-icon">
 		<link rel="icon" href="{{asset('frontend/assets/icon/icon.png')}}" sizes="32x32" />

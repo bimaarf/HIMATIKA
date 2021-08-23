@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device=width,initial-scale=1">
-    <title>Order | CM</title>
+    <title>Lapakku - Order</title>
 	<meta name="description" content="Platform pesan - antar untuk pebisnis PO, JASA & suply produk. Diprioritaskan untuk Kab. Ketapang">
     <link href="https://i.ibb.co/5Y4ZHqn/CM-black-150.png" rel="shortcut icon">
     <!-- Vendor css -->

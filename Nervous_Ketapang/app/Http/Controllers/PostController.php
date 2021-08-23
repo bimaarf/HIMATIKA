@@ -35,7 +35,7 @@ class PostController extends Controller
         }
         if($post->save())
         {
-            Session::flash('sukses','Post Added successfully');
+            Session::flash('sukses','Your post added successfully');
 
             return redirect()->route('fe-index.index');
 
@@ -48,11 +48,43 @@ class PostController extends Controller
 
     }
 
+    public function ubah(Request $request, $id)
+    {
+        $post = Post::find($id);
+        $post->post = $request->post;
+        $post->user_id = Auth::id();
+        $request->validate([
+            'post' => 'required',
+            'cover_img'=>'image|mimes:png,jpg,jpeg|max:1024',
+        ]);
+        if($request->hasFile('cover_img')) {
+            
+            $cover_img = $request->file('cover_img');
+            $filename = time().'-'.$cover_img->getClientOriginalName() ;
+            $post->cover_img = $filename;
+            
+            $request->cover_img->storeAs('post', $filename);
+        }
+        if($post->update())
+        {
+            Session::flash('sukses','Your post changed successfully');
+
+            return redirect()->route('fe-index.index');
+
+        }else
+        {
+            Session::flash('gagal','Post does not change');
+            return redirect()->route('fe-index.index');
+            
+        }
+
+    }
+
     public function hapus($id)
     {
         $post = Post::find($id);
         $post->delete();
-        Session::flash('sukses','Post deleted successfully');
+        Session::flash('sukses','Your post deleted successfully');
         return redirect()->route('fe-index.index');
     }
 }

@@ -1,7 +1,7 @@
 <div class="slim-header" id="refresh">
       <div class="container">
         <div class="slim-header-left">
-          <h2 class="slim-logo"><a href="{{ route('fe-index.index') }}">To<span>Ko</span></a></h2>
+          <h2 class="slim-logo"><a href="{{ route('fe-index.index') }}">Lapak<span>Ku</span></a></h2>
 
           <form action="{{ route('fe-index.index') }}" >
 

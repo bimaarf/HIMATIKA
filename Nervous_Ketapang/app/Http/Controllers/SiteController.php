@@ -37,4 +37,5 @@ class SiteController extends Controller
         $order = Order::orderBy('id', 'DESC')->get();
         return view('fe-order.index', compact('order'));
     }
+
 }

@@ -1,6 +1,6 @@
 <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Toko</a></li>
+      <li class="breadcrumb-item"><a href="#">Lapakku.ID</a></li>
       <li class="breadcrumb-item active" aria-current="page">My Shop</li>
     </ol>
     <h6 class="slim-pagetitle">My Shop</h6>
@@ -11,7 +11,7 @@
         
         @if (Auth::user()->hasRole('user'))
             
-        <small class="text-warning"><i>*Follow and DM &nbsp;<a href="https://instagram.com/bimaarf_" target="_blank"> <i class="fa fa-instagram"></i> bimaarf_</a>&nbsp;to activate the selling product feature and a verified account.</i></small>
+        <small class="text-warning"><i>*Follow and DM &nbsp;<a href="https://instagram.com/lapakkudotid" target="_blank"> <i class="fa fa-instagram"></i> bimaarf_</a>&nbsp;to activate the selling product feature and a verified account.</i></small>
         
         @endif
 
@@ -26,15 +26,15 @@
               {{-- window --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-window pos-absolute t-5 r-60 tx-20-force " data-toggle="tooltip" title="Edit!"></i></a>
 
-              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Delete!"></i></a>
+              <a href="#produkdeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-window pos-absolute t-5 r-20 tx-20-force text-danger" data-toggle="tooltip" title="Delete!"></i></a>
 
               {{-- mobile --}}
               <a href="{{ route('fe-product.form_ubah_product', ['slug'=>$pd->slug]) }}"><i class="fa fa-edit t-mobile pos-absolute t-5 r-40 " data-toggle="tooltip" title="Edit!"></i></a>
               
-              <a href="#modaldeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Delete!"></i></a>
+              <a href="#produkdeleted{{ $pd->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-trash t-mobile pos-absolute t-5 r-10  text-danger" data-toggle="tooltip" title="Delete!"></i></a>
 
             <!-- modal -->
-            <div id="modaldeleted{{ $pd->id }}" class="modal fade">
+            <div id="produkdeleted{{ $pd->id }}" class="modal fade">
               <div class="modal-dialog modal-dialog-vertical-center" role="document">
                 <div class="modal-content bd-0 tx-14 rounded">
                   <div class="modal-header pd-y-20 pd-x-25">

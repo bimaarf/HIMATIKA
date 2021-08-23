@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Product;
+use App\Models\User;
 use Session;
 
 class ProductController extends Controller
@@ -112,6 +113,18 @@ class ProductController extends Controller
         $product->delete();
         Session::flash('sukses_produk','Product deleted successfully');
         return redirect()->route('fe-index.index');
+    }
+
+    public function tokoUser(Request $request, $name)
+    {
+        if($request->has('search')){
+            $product = Product::where('title', 'LIKE', '%'.$request->search. '%')->get();
+
+        }else{
+            $product = Product::orderBy('id', 'DESC')->get();
+        }
+        $user = User::where('name', $name)->first();
+        return view('fe-toko.index', compact('user', 'product'));
     }
 
 }

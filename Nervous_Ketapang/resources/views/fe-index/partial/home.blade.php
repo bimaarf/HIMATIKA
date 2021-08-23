@@ -1,6 +1,6 @@
 <div class="slim-pageheader">
     <ol class="breadcrumb slim-breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Toko</a></li>
+        <li class="breadcrumb-item"><a href="#">Lapakku.ID</a></li>
         <li class="breadcrumb-item active" aria-current="page">Home</li>
     </ol>
     <h6 class="slim-pagetitle">Home</h6>
@@ -24,10 +24,43 @@
             <div class="container col-lg-7">
                 <div class="tab-content">
                     <div class="tab-pane active" id="home">
+                        <!-- modal -->
+            <div id="modalpost" class="modal fade">
+                <div class="modal-dialog modal-dialog-vertical-center" role="document">
+                  <div class="modal-content bd-0 tx-14 rounded">
+                    <div class="modal-header pd-y-20 pd-x-25">
+                      <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"><i class="fa fa-send tx-18-force"> </i> Writing</h6>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <form action="{{ route('fe-index.post') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group  force-overfow force-overflow" >
+                            <textarea class="form-control bg-transparent text-dark" rows="4" cols="50" onkeyup="textKomen()" name="post"  placeholder="What's happening ?" maxlength="300" style="border: none;" required></textarea>
+                            <img class="image img-fluid mb-3" id="blah" width="100px" src="#" alt="" />
+                            
+                        </div>
+                        <div class="modal-footer image-upload rounded">
+                            @if (Auth::check())
+                            @if (Auth::user()->hasRole('owner|admin'))
+                                
+                            <label for="imgInp" ><i class="fa fa-image"  class="float-left"></i></label>
+                            <input class="d-none" name="cover_img" accept="image/*" type='file' id="imgInp" />
+                            @endif
+
+                        @endif
+                            <input class="btn btn-outline-info pd-10-force col-md-2 float-right mb-3" type="submit" value="Post">  
+                        </div>
+                    </form>
+                  </div>
+                </div><!-- modal-dialog -->
+              </div><!-- modal -->
 <!-- ARTIKEL -->
                         <div class="card">
                             <div class="col-lg-t-5">
                                 <div class="card-sales ">
+                                    <a href="#modalpost" data-toggle="modal" data-effect="effect-just-me">
                                     <form action="{{ route('fe-index.post') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
@@ -37,26 +70,15 @@
                                                         <span class="input-group-text card-blog" id="inputGroupPrepend2"><img class="rounded-circle" width="40" src="{{ asset('storage/avatar/'. Auth::user()->avatar) }}" alt=""></span>
                                                     @endif
                                                 </div>
-                                                <textarea class="form-control " onkeyup="textKomen()" name="post" placeholder="What's happening ?" maxlength="300" required></textarea>
+                                                <textarea disabled class="form-control " onkeyup="textKomen()" name="post" placeholder="What's happening ?" maxlength="300" data-toggle="modal" data-effect="effect-just-me" required></textarea>
                                             </div>
                                         </div>
-                                        <div class="image-upload">
-                                        @if (Auth::check())
-                                            @if (Auth::user()->hasRole('owner|admin'))
-                                                
-                                            <label for="imgInp" ><i class="fa fa-image"  class="float-left"></i></label>
-                                            <input class="d-none" name="cover_img" accept="image/*" type='file' id="imgInp" />
-                                            @endif
-
-                                        @endif
-
-                                            <input class="btn btn-outline-info pd-10-force col-md-2 float-right mb-3" type="submit" value="Post"> 
-                                            <img class="image img-fluid mb-3" id="blah" src="#" alt="" />
-                                        </div>
+                                        
                                     </form>
+                                </a>
                                     <div class="d-flex mb-3 mt-4 float-left">
-                                        <a href="https://www.instagram.com/bimaarf_">Business</a>
-                                        <span class="text-muted ml-1">Toko</span>
+                                        <a href="https://www.instagram.com/lapakkudotid">Business</a>
+                                        <span class="text-muted ml-1">Lapakku.ID</span>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +90,8 @@
                                     <div class="post-grub" >
 
                                     @foreach ($post as $item)
-                                            
+                                        
+                                        
                                         <div class="post-item">
                                             <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">
 
@@ -80,34 +103,89 @@
                             
                                                     @if ($item->user->id == $rol->user_id)
 
-                                                    <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                                    {{-- <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i> --}}
+                                                    <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
                                                     
                                                     @endif
                                                 @endforeach
                                                 @foreach ($owner as $rol)
                             
                                                     @if ($item->user->id == $rol->user_id)
-                                                    <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                                    <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
                                                     <span class="text-warning">[Owner]</span>
                                                     
                                                     @endif
                                                 @endforeach
-                                            @if (Auth::check())
-                                                
-                                                @if ($item->user_id == Auth::user()->id)
-                                                
-                                                <a href="{{ route('fe-index.post.hapus', ['id'=>$item->id]) }}"><i class="fa fa-trash text-danger pull-right"></i></a>
+                                            
+                                                <!-- modal -->
+                                        <div id="modaldeleted{{ $item->id }}" class="modal fade">
+                                            <div class="modal-dialog modal-dialog-vertical-center" role="document">
+                                            <div class="modal-content bd-0 tx-14 rounded">
+                                                <div class="modal-header pd-y-20 pd-x-25">
+                                                    <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                    <h5 class="text-white tx-bold text-dark mg-b-0 tx-inverse ml-1">{{ $item->user->name }}</h5>
 
+                                                        @foreach ($roleUser as $rol)
+                                
+                                                            @if ($item->user->id == $rol->user_id)
+                                                            <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="ml-1" alt="">
+                                                            @endif
+
+                                                        @endforeach
+                                                        @foreach ($owner as $rol)
+                                    
+                                                            @if ($item->user->id == $rol->user_id)
+                                                            <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="ml-1" alt="">
+                                                            <span class="text-warning">[Owner]</span>
+                                                            
+                                                            @endif
+                                                        @endforeach
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                            @if (Auth::check())
+                                                @if ($item->user_id != Auth::user()->id)
+                                                <div class="modal-body">
+                                                    <p class="lh-3 mg-b-20 tx-inverse"></p>{{ $item->post }}</h5>
+                                                    <br>
+                                                    <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">Business</a>
+                                                <span class="text-muted ml-1">{{ $item->created_at }}</span>
+                                                </div>
                                                 @endif
                                             @endif
+                                            @if (Auth::check())
+                                                @if ($item->user_id == Auth::user()->id)
+                                                    <form action="{{ route('fe-index.post.edit', ['id'=>$item->id]) }}" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="form-group  force-overfow force-overflow" >
+                                                            <textarea class="form-control bg-transparent text-dark" rows="4" cols="50" onkeyup="textKomen()" name="post"  maxlength="300" style="border: none;" required>{{ $item->post }}</textarea>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer rounded">
+                                                            
+                                                            <input type="submit" class="btn btn-primary rounded" value="Edit Post" >    
+                                                            <a href="{{ route('fe-index.post.hapus', ['id'=>$item->id]) }}" id="btn-delete" class="btn btn-danger rounded"> <i class="fa fa-trash"></i> Delete Post</a>	        
+                                                        </div>
+                                                    </form>
+                                                @endif
+                                            @endif
+                                            </div>
+                                            </div><!-- modal-dialog -->
+                                        </div><!-- modal -->
+                                                
+                                                <a href="#modaldeleted{{ $item->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-ellipsis-h text-secondary pull-right"></i></a>
+
+                                               
                                             
-                                                <p class="post-title mt-2">{{ $item->post }}</p>
+                                                <p class="post-title mt-2 tx-w-space">{{ $item->post }}</p>
                                                 <img class="mb-0 img-fluid center-block"  src="{{ asset('storage/post/'. $item->cover_img) }}" alt=""> 
                                                 <!-- <div class="blog blog-title h4 tx-white ">Blog header</div> -->
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}" target="_blank">Business</a>
+                                                <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">Business</a>
                                                 <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>
@@ -140,7 +218,7 @@
                                     <span class="text-white">{{ Auth::user()->name }}</span>
                                     @if (Auth::user()->hasRole('owner|admin'))
 
-                                        <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                    <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
 
                                     @endif
                                     <span class="tx-12 ml-4 float-right text-secondary"><b>Logout</b></span>
@@ -158,7 +236,7 @@
                                         <a href="https://instagram.com/{{ $item->name }}" target="_blank">
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
                                             <span class="text-white">{{ $item->name }}</span>
-                                            <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                            <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
                                             <span class="text-warning">[Owner]</span>
                                             <span class="tx-12 fa-pull-right text-secondary"><i class="fa fa-instagram"></i> <b>Dev-K</b></span>
                                         </a> 
@@ -177,7 +255,7 @@
                                         <a href="{{ route('fe-toko.index', ['name'=>$item->name]) }}" target="_blank">
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
                                             <span class="text-white">{{ $item->name }}</span>
-                                            <i class=" active fa fa-check-circle verified" id="verified" aria-hidden="true"></i>
+                                            <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
                                             <span class="tx-12 fa-pull-right text-secondary"><i class="icon ion-ios-people"></i> <b>Seller  </b></span>
                                         </a> 
                                             <hr>

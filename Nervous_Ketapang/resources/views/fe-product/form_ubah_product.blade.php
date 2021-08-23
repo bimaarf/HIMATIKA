@@ -67,7 +67,6 @@
 		<a href="{{ route('fe-index.index') }}"><input class="btn btn-outline-info pd-10-force col-md-2 " type="button" value="Back"></a>
 		</form>
 
-
 @endif
 
 
