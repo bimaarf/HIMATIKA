@@ -11,7 +11,7 @@
         
         @if (Auth::user()->hasRole('user'))
             
-        <small class="text-warning"><i>*Follow and DM &nbsp;<a href="https://instagram.com/lapakkudotid" target="_blank"> <i class="fa fa-instagram"></i> bimaarf_</a>&nbsp;to activate the selling product feature and a verified account.</i></small>
+        <small class="text-warning"><i>*Follow and DM &nbsp;<a href="https://instagram.com/lapakkudotid" target="_blank"> <i class="fa fa-instagram"></i> lapakkudotid</a>&nbsp;to activate the selling product feature and a verified account.</i></small>
         
         @endif
 

@@ -112,7 +112,7 @@
                             
                                                     @if ($item->user->id == $rol->user_id)
                                                     <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
-                                                    <span class="text-warning">[Owner]</span>
+                                                    <span class="text-success">[Admin]</span>
                                                     
                                                     @endif
                                                 @endforeach
@@ -136,7 +136,7 @@
                                     
                                                             @if ($item->user->id == $rol->user_id)
                                                             <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="ml-1" alt="">
-                                                            <span class="text-warning">[Owner]</span>
+                                                            <span class="text-success">[Admin]</span>
                                                             
                                                             @endif
                                                         @endforeach
@@ -145,32 +145,35 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
-                                            @if (Auth::check())
-                                                @if ($item->user_id != Auth::user()->id)
-                                                <div class="modal-body">
-                                                    <p class="lh-3 mg-b-20 tx-inverse"></p>{{ $item->post }}</h5>
-                                                    <br>
-                                                    <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">Business</a>
-                                                <span class="text-muted ml-1">{{ $item->created_at }}</span>
+                                                    
+                                                <div class="form-group yelah force-overfow force-overflow" >
+                                                    <textarea disabled class="form-control bg-transparent text-dark " rows="4" cols="50" onkeyup="textKomen()" name="post"  maxlength="300" style="border: none;" required>{{ $item->post }}</textarea>
                                                 </div>
-                                                @endif
-                                            @endif
-                                            @if (Auth::check())
-                                                @if ($item->user_id == Auth::user()->id)
-                                                    <form action="{{ route('fe-index.post.edit', ['id'=>$item->id]) }}" method="POST" enctype="multipart/form-data">
-                                                        @csrf
-                                                        <div class="form-group  force-overfow force-overflow" >
-                                                            <textarea class="form-control bg-transparent text-dark" rows="4" cols="50" onkeyup="textKomen()" name="post"  maxlength="300" style="border: none;" required>{{ $item->post }}</textarea>
-                                                            
+                                                {{-- postingan un auth check --}}
+                                               
+                                                @if (Auth::check())
+                                                    @if ($item->user_id != Auth::user()->id)
+                                                        <div class="form-group force-overfow force-overflow" >
+                                                            <textarea disabled class="form-control bg-transparent text-dark " rows="4" cols="50" onkeyup="textKomen()" name="post"  maxlength="300" style="border: none;" required>{{ $item->post }}</textarea>
                                                         </div>
+                                                    @endif
+
+                                                    @if ($item->user_id == Auth::user()->id)
+                                                    <style>.yelah{display: none;}</style>
+                                                <form action="{{ route('fe-index.post.edit', ['id'=>$item->id]) }}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="form-group  force-overfow force-overflow" >
+                                                        <textarea class="form-control bg-transparent text-dark " rows="4" cols="50" onkeyup="textKomen()" name="post"  maxlength="300" style="border: none;" required>{{ $item->post }}</textarea>
+                                                        
+                                                    </div>
+                                                    
                                                         <div class="modal-footer rounded">
-                                                            
                                                             <input type="submit" class="btn btn-primary rounded" value="Edit Post" >    
                                                             <a href="{{ route('fe-index.post.hapus', ['id'=>$item->id]) }}" id="btn-delete" class="btn btn-danger rounded"> <i class="fa fa-trash"></i> Delete Post</a>	        
                                                         </div>
                                                     </form>
+                                                    @endif
                                                 @endif
-                                            @endif
                                             </div>
                                             </div><!-- modal-dialog -->
                                         </div><!-- modal -->
@@ -237,7 +240,7 @@
                                             <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->avatar) }}" alt="">
                                             <span class="text-white">{{ $item->name }}</span>
                                             <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="mb-1" alt="">
-                                            <span class="text-warning">[Owner]</span>
+                                            <span class="text-success">[Admin]</span>
                                             <span class="tx-12 fa-pull-right text-secondary"><i class="fa fa-instagram"></i> <b>Dev-K</b></span>
                                         </a> 
                                             <hr>

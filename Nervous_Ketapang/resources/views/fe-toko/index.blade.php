@@ -7,20 +7,19 @@
     </ol>
     <h6 class="slim-pagetitle">Info</h6>
     </div><!-- slim-pageheader -->
-
     <div class="card-contact mg-b-20">
         <div class="tx-center">
           <a href="https://instagram.com/{{ $user->name }}" target="_blank"><img src="{{ asset('storage/avatar/'. $user->avatar) }}" class="card-img" alt="profil"></a>
-          <h5 class="mg-t-10 mg-b-5"><a href="https://instagram.com/{{ $user->name }}" target="_blank" class="contact-name text-lowercase" style=" text-transform: capitalize;"><i class="fa fa-instagram"></i>&#32;{{ $user->name }}</a></h5>
+          <h5 class="mg-t-10 mg-b-5"><a href="https://instagram.com/{{ $user->name }}" target="blank" class="contact-name text-lowercase" style=" text-transform: capitalize;"><img src="{{ asset('frontend/assets/verified/Instagram_logo_2016.svg') }}" class="mb-1" width="17"alt="">&#32;{{ $user->name }}</a></h5>
             @if ($user->hasRole('user'))
             <p style=" text-transform: capitalize;">User</p>
             @endif
             @if ($user->hasRole('admin'))
-            <p style=" text-transform: capitalize;" class="text-success">Seller</p>
+            <p style=" text-transform: capitalize;" class="text-info">Seller</p>
             
             @endif
             @if ($user->hasRole('owner'))
-            <p style=" text-transform: capitalize;" class="text-warning">Owner</p>
+            <p style=" text-transform: capitalize;" class="text-success">Admin</p>
             @endif
         </div><!-- tx-center -->
 

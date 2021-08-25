@@ -14,22 +14,17 @@
 						<p style=" text-transform: capitalize;">User</p>
 						@endif
 						@if (Auth::user()->hasRole('admin'))
-						<p style=" text-transform: capitalize;" class="text-success">Seller</p>
+						<p style=" text-transform: capitalize;" class="text-info">Seller</p>
 						
 						@endif
 						@if (Auth::user()->hasRole('owner'))
-						<p style=" text-transform: capitalize;" class="text-warning">Owner</p>
+						<p style=" text-transform: capitalize;" class="text-success">Admin</p>
 						@endif
-        		      <p class="contact-social">
-        		        <a href=""><i class="fa fa-facebook"></i></a>
-        		        <a href=""><i class="fa fa-twitter"></i></a>
-        		        <a href=""><i class="fa fa-google"></i></a>
-        		      </p>
         		    </div><!-- tx-center -->
 
         		    <p class="contact-item">
-        		      <span>Username :</span>
-        		      <span>{{ Auth::user()->name }}</span>
+        		      <span>Instagram :</span>
+        		      <span><i class="fa fa-instagram"></i>&#32;{{Auth::user()->name }}</span>
         		    </p><!-- contact-item -->
         		    <p class="contact-item">
         		      <span>Email : </span>
@@ -37,10 +32,10 @@
         		    </p><!-- contact-item -->
         		    <p class="contact-item">
         		      <span>Setting :</span>
-        		      <a href="#">change password</a>
+        		      <a href="#">Coming soon</a>
         		    </p><!-- contact-item -->
         		    <p class="contact-item">
-        		      <span>Add User :</span>
-        		      <a href="{{ route('register') }}">Register</a>
+        		      <span>Become a seller :</span>
+        		      <a href="https://instagram.com/lapakkudotid" target="blank">Register</a>
         		    </p><!-- contact-item -->
         		</div><!-- card -->
