@@ -177,18 +177,125 @@
                                             </div>
                                             </div><!-- modal-dialog -->
                                         </div><!-- modal -->
+                                                {{-- komentar --}}
+                                                <!-- modal -->
+                                        <div id="comment{{ $item->id }}" class="modal fade" >
+                                            <div class="modal-dialog modal-dialog-vertical-center" role="document">
+                                            <div class="modal-content bd-0 tx-14 rounded">
+                                                <div class="modal-header pd-y-20 pd-x-25 float-left">
+                                                    <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                    <h5 class="text-white tx-bold text-dark mg-b-0 tx-inverse ml-1">{{ $item->user->name }}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                {{-- Postingan --}}
+                                                <div class="komen"  data-spy="scroll" data-offset="0" style="height: 300px;overflow-y: scroll; " >
+                                                    <div class="modal-body bg-transparent bd-0 ">
+                                                        {{-- postingan --}}
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10 ">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;{{ $item->post }}</span>
+                                                            <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                      
+                                                        </div>
+                                                            {{-- comment --}}
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1  mg-b-0 ml-1 </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+                                                            {{-- comment --}}
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1  mg-b-0 ml-1 </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+                                                            {{-- comment --}}
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1 asdasdsadasaaaaa asd mg-b-0 ml-1 </span>
+                                                                <br>
+                                                                <small>{{ $item->created_at }}</small>
+                                                            </div>
+                                                        </div>
+                                                           
+                                                    </div>
+                                                    
+                                                        
+                                                </div>
                                                 
+                                                <div class="modal-footer rounded">
+                                                    <input class="form-control bg-white text-dark rounded"  onkeyup="textKomen()" name="post"   style="border: none;" placeholder="Add a comment..." required>
+                                                    <button type="submit" class="btn btn-outline-primary rounded" maxlength="100"><i class="fa fa-send"></i>&#32;Send</button>
+                                                </div>
+                                            </div>
+                                            </div><!-- modal-dialog -->
+                                        </div><!-- modal -->
+
+                                        
                                                 <a href="#modaldeleted{{ $item->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-ellipsis-h text-secondary pull-right"></i></a>
 
                                                
                                             
-                                                <p class="post-title mt-2 tx-w-space">{{ $item->post }}</p>
+                                                <p class="post-title mt-2 tx-w-space ">{{ $item->post }}</p>
                                                 <img class="mb-0 img-fluid center-block"  src="{{ asset('storage/post/'. $item->cover_img) }}" alt=""> 
                                                 <!-- <div class="blog blog-title h4 tx-white ">Blog header</div> -->
                             
                                             <div class="d-flex mt-4 ">
                                 
-                                                <a href="{{ route('fe-toko.index', ['name'=>$item->user->name]) }}">Business</a>
+                                                <a href="#comment{{ $item->id }}" data-toggle="modal" data-effect="effect-just-me"><i class="fa fa-comment"></i> Comment</a>
                                                 <span class="text-muted ml-1">{{ $item->created_at }}</span>
                                 
                                             </div>

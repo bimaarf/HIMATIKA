@@ -63,6 +63,16 @@
 					-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 					background-color: #1b84e7; 
 			}
+						/* Hide scrollbar for Chrome, Safari and Opera */
+			.komen::-webkit-scrollbar {
+			display: none;
+			}
+
+			/* Hide scrollbar for IE, Edge and Firefox */
+			.komen {
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+			}
 			@media screen and (max-width:500px) {
 				
 				.img-gallery-product img{
