@@ -185,6 +185,20 @@
                                                 <div class="modal-header pd-y-20 pd-x-25 float-left">
                                                     <img class="rounded-circle img-thumbnail" width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
                                                     <h5 class="text-white tx-bold text-dark mg-b-0 tx-inverse ml-1">{{ $item->user->name }}</h5>
+                                                    @foreach ($roleUser as $rol)
+                                                    
+                                                    @if ($item->user->id == $rol->user_id)
+                                                    <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="ml-1" alt="">
+                                                    @endif
+
+                                                @endforeach
+                                                @foreach ($owner as $rol)
+                            
+                                                    @if ($item->user->id == $rol->user_id)
+                                                    <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="13" class="ml-1" alt="">
+                                                    
+                                                    @endif
+                                                @endforeach
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -198,7 +212,22 @@
                                                                 <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
                                                             </div>
                                                             <div class="col-10 ">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;{{ $item->post }}</span>
+                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>
+                                                                    @foreach ($roleUser as $rol)
+                                                    
+                                                                                @if ($item->user->id == $rol->user_id)
+                                                                                <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="12"  alt="">
+                                                                                @endif
+
+                                                                            @endforeach
+                                                                            @foreach ($owner as $rol)
+                                                        
+                                                                                @if ($item->user->id == $rol->user_id)
+                                                                                <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="12"  alt="">
+                                                                                
+                                                                                @endif
+                                                                            @endforeach
+                                                                    &#32;{{ $item->post }}</span>
                                                             <br>
                                                                 <small>{{ $item->created_at }}</small>
                                                             </div>
@@ -213,7 +242,22 @@
                                                                         <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $cmt->user->avatar) }}" alt="">
                                                                     </div>
                                                                     <div class="col-10">
-                                                                        <span class="text-white text-dark"><b>{{ $cmt->user->name }}</b>&#32;{{ $cmt->comment }}</span>
+                                                                        <span class="text-white text-dark"><b>{{ $cmt->user->name }}</b>
+                                                                            @foreach ($roleUser as $rol)
+                                                    
+                                                                                @if ($cmt->user->id == $rol->user_id)
+                                                                                <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="12"  alt="">
+                                                                                @endif
+
+                                                                            @endforeach
+                                                                            @foreach ($owner as $rol)
+                                                        
+                                                                                @if ($cmt->user->id == $rol->user_id)
+                                                                                <img src="{{ asset('frontend/assets/verified/verified.svg') }}" width="12"  alt="">
+                                                                                
+                                                                                @endif
+                                                                            @endforeach
+                                                                            &#32;{{ $cmt->comment }}</span>
                                                                         <br>
                                                                         <small>{{ $cmt->created_at }}</small>
                                                                     </div>
