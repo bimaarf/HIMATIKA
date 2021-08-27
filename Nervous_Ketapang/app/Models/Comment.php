@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use App\Models\User;
-use App\Models\Comment;
-class Post extends Model
+use App\Models\Post;
+
+class Comment extends Model
 {
     use HasFactory;
-    protected $table = 'post';
+    protected $table = 'comment';
     public function getCreatedAtAttribute()
     {
         return \Carbon\Carbon::parse($this->attributes['updated_at'])
@@ -20,10 +21,8 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    public function comment()
+    public function post()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(pOST::class);
     }
-
 }

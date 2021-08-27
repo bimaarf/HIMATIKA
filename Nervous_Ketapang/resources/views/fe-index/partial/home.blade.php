@@ -141,7 +141,7 @@
                                                             @endif
                                                         @endforeach
 
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
@@ -205,81 +205,33 @@
                                                       
                                                         </div>
                                                             {{-- comment --}}
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
+                                                        @foreach ($comment as $cmt)
+                                                            @if ($cmt->post_id == $item->id)
+                                                                
+                                                                <div class="row">
+                                                                    <div class="col-2">
+                                                                        <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $cmt->user->avatar) }}" alt="">
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <span class="text-white text-dark"><b>{{ $cmt->user->name }}</b>&#32;{{ $cmt->comment }}</span>
+                                                                        <br>
+                                                                        <small>{{ $cmt->created_at }}</small>
+                                                                    </div>
+                                                                </div>
 
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1  mg-b-0 ml-1 </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
-                                                            {{-- comment --}}
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
+                                                            @endif
+                                                        @endforeach
 
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1  mg-b-0 ml-1 </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
-                                                            {{-- comment --}}
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32;i </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-2">
-                                                                <img  class="rounded-circle " width="40" src="{{ asset('storage/avatar/'. $item->user->avatar) }}" alt="">
-                                                            </div>
-                                                            <div class="col-10">
-                                                                <span class="text-white text-dark"><b>{{ $item->user->name }}</b>&#32; mg-b-0 ml-1 asdasdsadasaaaaa asd mg-b-0 ml-1 </span>
-                                                                <br>
-                                                                <small>{{ $item->created_at }}</small>
-                                                            </div>
-                                                        </div>
-                                                           
                                                     </div>
-                                                    
-                                                        
                                                 </div>
-                                                
-                                                <div class="modal-footer rounded">
-                                                    <input class="form-control bg-white text-dark rounded"  onkeyup="textKomen()" name="post"   style="border: none;" placeholder="Add a comment..." required>
-                                                    <button type="submit" class="btn btn-outline-primary rounded" maxlength="100"><i class="fa fa-send"></i>&#32;Send</button>
-                                                </div>
+                                                {{-- form input comment --}}
+                                                <form action="{{ route('fe-comment.tambah', ['id'=>$item->id]) }}" method="post">
+                                                    @csrf
+                                                    <div class="modal-footer rounded">
+                                                        <input class="form-control bg-white text-dark rounded"  onkeyup="textKomen()" name="comment"   style="border: none;" placeholder="Add a comment..." required>
+                                                        <button type="submit" class="btn btn-outline-primary rounded" maxlength="100"><i class="fa fa-send"></i>&#32;Send</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                             </div><!-- modal-dialog -->
                                         </div><!-- modal -->

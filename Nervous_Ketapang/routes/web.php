@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TokoController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Order;
@@ -24,6 +25,9 @@ use App\Models\Post;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/bundamaria', function () {
+    Artisan::call('migrate');
+});
 Route::get('/link-storage', function () {
     Artisan::call('storage:link');
 });
@@ -70,6 +74,7 @@ Route::post('/post', [PostController::class, 'post'])->name('fe-index.post')->mi
 Route::post('/post/edit/{id}', [PostController::class, 'ubah'])->name('fe-index.post.edit')->middleware(['auth', 'role:user|admin|owner']);
 Route::get('/post/delete/{id}', [PostController::class, 'hapus'])->name('fe-index.post.hapus')->middleware(['auth', 'role:user|admin|owner']);
 
-
+// Comment
+Route::post('/comment/tambah/{id}', [CommentController::class, 'tambah'])->name('fe-comment.tambah')->middleware(['auth', 'role:user|admin|owner']);
 
 // form order
