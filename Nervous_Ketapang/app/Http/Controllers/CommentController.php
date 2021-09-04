@@ -21,7 +21,7 @@ class CommentController extends Controller
         {
             Session::flash('sukses','Your comment added successfully');
 
-            return back();
+            return redirect()->route('fe-index.index');
 
         }else
         {

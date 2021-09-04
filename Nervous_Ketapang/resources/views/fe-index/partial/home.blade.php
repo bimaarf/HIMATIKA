@@ -134,8 +134,8 @@
 
                                         <!-- modal -->
                                         <div id="modaldeleted{{ $item->id }}" class="modal fade">
-                                            <div class="modal-dialog modal-dialog-vertical-center" role="document">
-                                                <div class="modal-content bd-0 tx-14 rounded">
+                                            <div class="modal-dialog modal-dialog-vertical-center" tabindex="-1" role="document">
+                                                <div class="modal-content modal-lg bd-0 tx-14 rounded">
                                                     <div class="modal-header pd-y-20 pd-x-25">
                                                         <img class="rounded-circle img-thumbnail" width="40"
                                                             src="{{ asset('storage/avatar/' . $item->user->avatar) }}"
@@ -167,14 +167,14 @@
                                                         </button>
                                                     </div>
 
-                                                    <div class="form-group yelah force-overfow force-overflow">
+                                                    <div class="form-group yelah force-overfow force-overflow pd-25">
                                                         <p>{{ $item->post }}</p>
                                                     </div>
                                                     {{-- postingan un auth check --}}
 
                                                     @if (Auth::check())
                                                         @if ($item->user_id != Auth::user()->id)
-                                                            <div class="form-group force-overfow force-overflow">
+                                                            <div class="form-group force-overfow force-overflow pd-25">
                                                                 <p>{{ $item->post }}</p>
                                                             </div>
                                                         @endif
@@ -215,11 +215,11 @@
                                         </div><!-- modal -->
                                         {{-- komentar --}}
                                         <!-- modal -->
-                                        <div id="comment{{ $item->id }}" class="modal fade">
-                                            <div class="modal-dialog modal-dialog-vertical-center" role="document">
+                                        <div id="comment{{ $item->id }}" class="modal fade" tabindex="-1">
+                                            <div class="modal-dialog modal-lg modal-dialog-center" role="document">
                                                 <div class="modal-content bd-0 tx-14 rounded">
                                                     <div class="modal-header pd-y-20 pd-x-25 float-left tx-20">
-                                                        <i class="fa fa-comment text-primary"></i><b class="ml-1 text-dark">Comment</b>
+                                                        <i class="fa fa-comment text-primary"></i><b class="ml-1 text-dark modal-title">Comment</b>
                                                         
                                                         <button type="button" class="close"
                                                             data-dismiss="modal" aria-label="Close">
