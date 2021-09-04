@@ -5,7 +5,7 @@
     </ol>
     <h6 class="slim-pagetitle">My Shop</h6>
   </div><!-- slim-pageheader -->
-  
+
   <div class="section-wrapper">
       <div class="card bd-0">
         

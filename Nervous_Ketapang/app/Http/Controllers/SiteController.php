@@ -21,17 +21,19 @@ class SiteController extends Controller
 
         }else{
             $post = Post::orderBy('id', 'DESC')->get();
+
         }
-        
         $user = User::all();
         $comment = Comment::orderBy('id', 'ASC')->get();
-        $userSide = User::limit(4)->orderBy('id', 'DESC')->get();
+        $strCmt = Comment::orderBy('id', 'DESC')->get();
+        $total = Comment::count();
+        $userSide = User::orderBy('id', 'DESC')->get();
         $roleUser = DB::table('role_user')->where('role_id', '2')->get();
         $owner = DB::table('role_user')->where('role_id', '1')->get();
         $roles = Role::all();
         $product = Product::orderBy('id', 'DESC')->get();
         $order = Order::orderBy('id', 'DESC')->get();
-        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'comment', 'userSide', 'roleUser', 'owner', 'roles'));
+        return view('fe-index.index',compact('post', 'product', 'order', 'user', 'comment', 'strCmt', 'total', 'userSide', 'roleUser', 'owner', 'roles'));
     }
     public function order()
     {
